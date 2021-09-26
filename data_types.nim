@@ -44,7 +44,11 @@ var
   # Ye, I'm a native spanish speaker, and I'm very
   # surprised that this is allowed in Nim
   ñ: string = "ñÑÑññññÑÑñ"
-  o: string = "oOooOoOoo"
+  # Multi line string and also literal
+  o: string = """
+oOooO \hello\
+oOoo "oOoooOooO"
+"""
   p: string # Same as for char
 
 echo m
