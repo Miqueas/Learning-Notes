@@ -1,8 +1,8 @@
 # Integers
 var
-  a: int = 38
+  a = 38'i8 # int8
   # The underscore is ignored
-  b: int = 10_000
+  b = 10_000'u # uint
   c: int = -487
   d: int # 0 by default
 
@@ -13,9 +13,10 @@ echo d
 
 # Floats
 var
-  e: float = 2.5
-  f: float = -0.6
-  g: float = 6e3
+  # 'float' are always of 64 bits
+  e = 2.5'f32 # float32
+  f = -0.6'f64 # float64
+  g = 6e3
   h: float # 0.0 by default
 
 echo e
@@ -72,10 +73,10 @@ echo int(e)
 echo float(c)
 
 # "Plain" division (i.e. returns an integer)
-echo b div a
+echo int(b) div int(a)
 
 # Remainder
-echo b mod a
+echo int(b) mod int(a)
 
 # String concatenation
 echo ñ & o
