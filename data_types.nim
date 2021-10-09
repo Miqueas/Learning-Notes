@@ -92,3 +92,9 @@ echo not true # false
 echo true and true # true
 echo false or true # true
 echo true xor false # true
+
+# Custom types are also allowed and is really easy
+type Num = int
+
+var number: Num = -29
+echo number
