@@ -41,3 +41,12 @@ echo 6.mult(12)
 
 proc mult(x, y: int): int =
   result = x * y
+
+#[
+  A note about procedures: as in Ruby, the usage of the 'return'
+  keyword is optional, Nim will return the last operation done
+  in the procedure body. By example:
+]#
+proc nice(): string = "nice"
+
+echo nice()
