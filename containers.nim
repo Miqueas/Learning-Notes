@@ -7,17 +7,23 @@ var
   # This is valid too
   nums2 = [ 1, 3, 5, 7, 9 ]
   strlist = [ "hello", "world" ]
+  # An array that can be indexed from 0 to 4, this is also valid
+  # using Enums instead of integers literal
+  arr: array[0..4, int]
+
+arr = nums1
 
 echo nums1
 echo nums2
 echo strlist
+echo arr
 
 # Sequences: like arrays, but the size don't need to be known at compile
 #            time
 var
   nums3: seq[int]
   seqliteral = @[ "abc", "def", "ghi" ]
-  # Anothe way to init an empty sequence
+  # Another way to init an empty sequence
   myname = newSeq[string]()
 
 myname.add("Miqueas")
@@ -34,15 +40,21 @@ echo myname
 # Tuples: like arrays (fixed size), but data is heterogeneous and
 #         uses key-value pairs (optional)
 var
-  cat = ("Bingus", true)
+  cat: tuple = ("Bingus", true)
   me = (
     name: "Miqueas",
     is_nerd: true,
     likes: [ "coding", "anime", "music" ]
   )
+  # Declaring is done in this way
+  website: tuple[name: string, url: string]
+
+website.name = "Github"
+website.url = "https://github.com/"
 
 echo cat
 echo me
+echo website
 
 #[ Indexing and slicing containers ]#
 
@@ -51,6 +63,6 @@ echo me
 echo nums1[^1]
 echo seqliteral[2]
 
-# Slicing works with the for syntax: start .. stop or start ..< stop
+# Slicing works with the 'for' syntax: start .. stop or start ..< stop
 echo nums3[3 .. 7]
 echo nums3[5 ..< 10]
