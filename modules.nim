@@ -1,33 +1,58 @@
-# Modules are imported like in Python
+# Basic import of are like in Python
 import strutils
 
 var
-  name = "Miqueas Martinez"
+  name = "Miqueas"
 
+# But qualifier aren't really needed
 echo name.split()
 echo name.toupperascii()
 echo name.repeat(3)
 
-# Creating a module is easy, but to allow use functions,
-# u need to put an asterisk at the end of function names:
+# To make things "public", u need to put an asterisk (*)
+# after the name
 proc sqr*(n: int): int =
-  result = n * n
+  n * n
 
-# Now about importing path, works in this way:
-#[ Folder example:
-  .
-  ├── myOtherSubdir
-  │   ├── fifthFile.nim
-  │   └── fourthFile.nim
-  ├── mySubdir
-  │   └── thirdFile.nim
-  ├── firstFile.nim
-  └── secondFile.nim
+# Another example
+type MyObject* = ref object
+  my_int: int
+  my_string: string
 
-# Importing:
+# Importing from an specific file in a path
+import lib/mod1
 
-import firstFile
-import mySubdir/thirdFile
-import myOtherSubdir / [fourthFile, fifthFile]
+hello()
 
+# Importing specific symbols
+from lib/mod2 import Lang
+
+var nim: Lang = (
+  name: "Lua",
+  released_year: 2008'i16,
+  similar_to: @[ "Python", "Rust", "C++" ]
+)
+
+echo nim
+
+# To enforce use a qualifier in modules (like in
+# Python), do this
+from lib/mod2 import nil
+
+echo mod2.PI
+
+# Excluding symbols
+import lib/mod3 except Person
+
+var
+  p = Point(x: 3.1, y: 4.7)
+  r = Rect(x: p.x, y: p.y, w: 800, h: 600)
+
+echo p[]
+echo r[]
+
+#[
+  About ambiguous names in modules, please refer to the Nim Tutorial 1
+  in the "Modules" section, that explains it very well and using
+  examples
 ]#
