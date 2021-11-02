@@ -7,7 +7,7 @@ proc greet(name: string): string =
 proc bye(name: string): string =
   "Goodbye, " & name & "."
 
-proc talk(fn: proc(n: string): string, name = "guest"): void =
+proc talk(fn: proc (n: string): string; name = "guest"): void =
   echo fn(name)
 
 talk(greet, "Pablo")
