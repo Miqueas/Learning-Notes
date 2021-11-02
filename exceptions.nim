@@ -2,7 +2,9 @@
   Exceptions are handled like in Python
 ]#
 
-proc greet(name: string = "guest") =
+# The {.raises.} pragma can be used to tell the compiler
+# that a function can raise an error
+proc greet(name: string = "guest") {.raises: [ValueError].} =
   if name == "":
     let e = new(ValueError)
     e.msg = "`name` is empty"
