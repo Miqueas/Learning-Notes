@@ -1,0 +1,7 @@
+tasks:
+  - init: |
+      echo "Downloading Nim"
+      wget -O $HOME/choosenim https://nim-lang.org/choosenim/init.sh
+      chmod +x $HOME/choosenim
+      $HOME/choosenim -y
+      echo "export PATH=$HOME/.nimble/bin:$PATH" >> $HOME/.bashrc
