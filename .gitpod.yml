@@ -10,3 +10,7 @@ tasks:
       sudo sh -c 'wget -qO- https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list'
       sudo apt update
       sudo apt install -y dart
+
+vscode:
+  extensions:
+    - dart-code.dart-code
