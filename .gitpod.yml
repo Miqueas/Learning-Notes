@@ -1,0 +1,16 @@
+image: gitpod/workspace-base
+
+tasks:
+  - name: Setup workspace
+    command: |
+      cd $HOME
+      sudo wget https://netcologne.dl.sourceforge.net/project/d-apt/files/d-apt.list -O /etc/apt/sources.list.d/d-apt.list
+      sudo apt update --allow-insecure-repositories -y
+      sudo apt upgrade -y
+      sudo apt -y --allow-unauthenticated install --reinstall d-apt-keyring
+      sudo apt update
+      sudo apt install dmd-compiler dmd-tools dmd-doc dub
+
+vscode:
+  extensions:
+    - webfreak.code-d
