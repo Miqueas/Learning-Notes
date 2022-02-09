@@ -10,6 +10,12 @@ tasks:
       sudo apt -y --allow-unauthenticated install --reinstall d-apt-keyring
       sudo apt update -y
       sudo apt install -y dmd-compiler dmd-tools dmd-doc dub
+      git clone https://github.com/Pure-D/serve-d.git
+      cd serve-d
+      dub build
+      sudo cp serve-d /usr/local/bin/
+      cd ..
+      rm -rf serve-d
 
 vscode:
   extensions:
