@@ -1,7 +1,7 @@
 // Imports doesn't need to be in the top of the code and can import
 // only specified things using `:`
 import std.stdio;
-import std.conv : to, ConvException;
+import std.conv;
 import std.string : chomp;
 
 void main() {
