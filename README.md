@@ -1,2 +1,3 @@
 # DNotes
-Code i wrote while learning D
+
+Code i wrote while learning ***D***
