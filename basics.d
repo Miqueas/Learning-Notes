@@ -97,4 +97,9 @@ void main() {
   }
 
   // And there's do-while, but bruh, u may known how it works
+
+  // D also has a thing called `foreach_reverse`
+  foreach_reverse (a; [ 2, 4, 6, 8, 10]) {
+    writeln(a);
+  }
 }
