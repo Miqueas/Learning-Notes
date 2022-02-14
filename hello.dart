@@ -6,7 +6,7 @@ void main(List<String> args) {
     print("Arguments:");
 
     for (var arg in args) {
-      print(arg);
+      print(" - $arg");
     }
   }
 }
