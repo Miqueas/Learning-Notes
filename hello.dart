@@ -1,7 +1,12 @@
+// An small overview of Dart
 void main(List<String> args) {
   print("E");
 
-  for (var arg in args) {
-    print(arg);
+  if (args.isNotEmpty) {
+    print("Arguments:");
+
+    for (var arg in args) {
+      print(arg);
+    }
   }
 }
