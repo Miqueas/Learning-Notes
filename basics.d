@@ -87,4 +87,14 @@ void main() {
       break;
     }
   }
+
+  // `while` block
+  int e = 0;
+  while (true) {
+    e *= 2;
+
+    if (e <= 20) break;
+  }
+
+  // And there's do-while, but bruh, u may known how it works
 }
