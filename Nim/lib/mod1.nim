@@ -1,2 +1,2 @@
-proc hello*() =
+proc hello* =
   echo "Hello, world!"
