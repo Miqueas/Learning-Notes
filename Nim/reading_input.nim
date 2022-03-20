@@ -1,14 +1,14 @@
-from strutils import parseint
+import strutils
 
 # Well... Just:
 echo "Your name?"
-var name = readline(stdin)
+var name = readLine(stdin)
 
 echo "Hello ", name, "!"
 
 # Parsing integers:
 echo "Age?"
-var age = stdin.readline().parseint()
+var age = parseInt(readLine(stdin))
 
 if age < 18:
   echo "You're too young!"
