@@ -5,6 +5,7 @@
 var
   nums1: array[5, int] = [ 2, 4, 6, 8, 10 ]
   # This is valid too
+  # nums2 is `array[5, int]`
   nums2 = [ 1, 3, 5, 7, 9 ]
   strlist = [ "hello", "world" ]
   # An array that can be indexed from 0 to 4, this is also valid
@@ -18,8 +19,7 @@ echo nums2
 echo strlist
 echo arr
 
-# Sequences: like arrays, but the size don't need to be known at compile
-#            time
+# Sequences: like arrays, but has a dynamic size
 var
   nums3: seq[int]
   seqliteral = @[ "abc", "def", "ghi" ]
@@ -38,9 +38,9 @@ echo seqliteral
 echo myname
 
 # Tuples: like arrays (fixed size), but data is heterogeneous and
-#         uses key-value pairs (optional)
+#         uses an optional key-value pairs
 var
-  cat: tuple = ("Bingus", true)
+  cat = ("Bingus", true)
   me = (
     name: "Miqueas",
     is_nerd: true,
@@ -48,6 +48,11 @@ var
   )
   # Declaring is done in this way
   website: tuple[name: string, url: string]
+  # Or this way (for tuples without keys)
+  dog: (string, bool)
+
+dog[0] = "E"
+dog[1] = false
 
 website.name = "Github"
 website.url = "https://github.com/"
@@ -55,6 +60,7 @@ website.url = "https://github.com/"
 echo cat
 echo me
 echo website
+echo dog
 
 #[ Indexing and slicing containers ]#
 
