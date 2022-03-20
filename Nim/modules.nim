@@ -1,8 +1,7 @@
-# Basic import of are like in Python
+# Importing modules is similar to python
 import strutils
 
-var
-  name = "Miqueas"
+var name = "Miqueas"
 
 # But qualifier aren't really needed
 echo name.split()
@@ -11,13 +10,12 @@ echo name.repeat(3)
 
 # To make things "public", u need to put an asterisk (*)
 # after the name
-proc sqr*(n: int): int =
-  n * n
+proc sqr*(n: int): int = n * n
 
 # Another example
-type MyObject* = ref object
-  my_int: int
-  my_string: string
+type MyObject* = object
+  myInt: int
+  myString: string
 
 # Importing from an specific file in a path
 import lib/mod1
@@ -29,8 +27,8 @@ from lib/mod2 import Lang
 
 var nim: Lang = (
   name: "Lua",
-  released_year: 2008'i16,
-  similar_to: @[ "Python", "Rust", "C++" ]
+  releaseYear: 2008'i16,
+  similarTo: @[ "Python", "Rust", "C++" ]
 )
 
 echo nim
@@ -48,8 +46,8 @@ var
   p = Point(x: 3.1, y: 4.7)
   r = Rect(x: p.x, y: p.y, w: 800, h: 600)
 
-echo p[]
-echo r[]
+echo p
+echo r
 
 #[
   About ambiguous names in modules, please refer to the Nim Tutorial 1
