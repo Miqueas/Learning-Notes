@@ -12,6 +12,8 @@ type
 var
   i: int = 7
   ir: IntRef = new(int)
+  # you may want to use `addr` to get the address of
+  # a memory location
   # use cast[T]() instead of T() to prevent an error
   ip: IntPtr = cast[IntPtr](alloc(sizeof(int)))
 
