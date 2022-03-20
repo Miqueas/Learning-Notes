@@ -11,15 +11,11 @@ type Person* = object
 
 # Setter method
 proc `name=`*(self: var Person, value: string) {.inline.} =
-  var e = new(ValueError)
-
   case value:
     of "name":
-      e.msg = "Funny, the Person name is 'name'"
-      raise e
+      raise newException(ValueError, "Funny, the Person name is 'name'")
     of "":
-      e.msg = "Person name is empty"
-      raise e
+      raise newException(ValueError, "Person name is empty")
     else:
       self.name = value
 
