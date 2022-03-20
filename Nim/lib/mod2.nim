@@ -4,6 +4,6 @@ const
 
 type Lang* = tuple[
   name: string,
-  released_year: int16,
-  similar_to: seq[string]
+  releaseYear: int16,
+  similarTo: seq[string]
 ]
