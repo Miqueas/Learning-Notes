@@ -1,7 +1,13 @@
-# Nim supports Enums and is simple to make it
+# Nim supports Enums and is simple to make it:
 type
-  TimeFmt = enum F12_HOURS, F24_HOURS
-  Direction = enum NORTH, EAST, SOUTH, WEST
+  TimeFmt = enum
+    F12_HOURS,
+    F24_HOURS
+  Direction = enum
+    NORTH,
+    EAST,
+    SOUTH,
+    WEST
 
 # and that's it!
 var
