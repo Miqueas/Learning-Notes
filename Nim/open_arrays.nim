@@ -10,4 +10,6 @@ proc printElements(a: openArray[string]): void =
 
 var things = [ "foo", "bar", "baz" ]
 
+# `openArray` is a flexible type that accepts both, arrays and
+# sequences (`seq`)
 printElements(things)
