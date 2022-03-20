@@ -2,6 +2,7 @@
 proc sqr(n: int): int =
   return n * n
 
+# Sometimes you can omit the return keyword
 proc cube(n: int): int =
   return n * n * n
 
@@ -45,8 +46,10 @@ proc mult(x, y: int): int =
 #[
   A note about procedures: as in Ruby, the usage of the 'return'
   keyword is optional, Nim will return the last operation done
-  in the procedure body. By example:
+  in the procedure body and parenthesis are optional too.
+  By example:
 ]#
-proc nice(): string = "nice"
+proc nice: string = "nice"
 
 echo nice()
+echo 29.sqr
