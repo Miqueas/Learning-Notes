@@ -1,6 +1,6 @@
 #[
   Variadic arguments
-    This type of functions in Nim usesthe syntax:
+    This type of functions in Nim uses the syntax:
 
       proc name(arg: varargs[T]): return_type
 
@@ -16,10 +16,11 @@ echo sumWhileNotNegative(6, 5, 7, 93, 56)
 
 #[
   Inmutable arguments
-    By default, function arguments are inmutable,
-    to make it mutable, the 'var' keyword is needed:
+    By default, function arguments are inmutable and
+    passed copying the value, to make them mutable,
+    the `var` keyword is needed:
 ]#
-proc addOne(n: var int): void =
+proc addOne(n: var int) =
   n += 1
 
 var x = 9
@@ -29,18 +30,19 @@ echo x
 
 #[
   The 'discard' statement
-    All values needs to be used in Nim, calling a function
-    that returns something and not using the returned value
-    will throw an error. To prevent this, if you don't need
-    that value, then use 'discard':
+    All values needs to be used in Nim, if you call a
+    function that returns something and you don't use
+    or save it, you'll get a compile error. To prevent
+    this, if you don't need that value, then use
+    `discard`:
 ]#
 discard sumWhileNotNegative(390, 49, 76)
 
 #[
   Named arguments
-    Just like Python:
+    Just like in Python:
 ]#
-proc greet(name: string): void =
+proc greet(name: string) =
   echo "Hi ", name, "!"
 
 greet(name = "Miqueas")
@@ -49,8 +51,13 @@ greet(name = "Miqueas")
   Default arguments
     Just like in Python:
 ]#
-proc welcome(name = "guest"): void =
+proc welcome(name = "guest") =
   echo "Welcome, ", name, "!"
 
 welcome()
 welcome("Miqueas")
+
+#[ Note: if a function returns nothing (`void`) you can
+         skip that last part, the compiler will know
+         that the function doesn't return a value
+]#
