@@ -16,9 +16,9 @@ type
   DataType = object
     case kind: DataKind
       of dkInteger: intValue: int
-      of dkFloat:   floatValue: float
+      of dkFloat: floatValue: float
       of dkBoolean: boolValue: bool
-      of dkString:  stringValue: string
+      of dkString: stringValue: string
 
 var d = DataType(kind: dkString)
 d.stringValue = "Hello, world!"
