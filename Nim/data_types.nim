@@ -1,3 +1,6 @@
+# Nim supports type inference, so you wouldn't need to
+# indicate the type always
+
 # Integers
 var
   a = 38'i8 # int8
@@ -28,8 +31,8 @@ echo h
 # In Nim, characters are represented with '
 # and must be only one
 var
-  i: char = 'i'
-  j: char = 'j'
+  i = 'i'
+  j = 'j'
   # Uncomment to see the error:
   # k: char = 'kl'
   l: char # Nothing or \0 by default (i guess)
@@ -41,12 +44,12 @@ echo l
 # Strings
 # In Nim, string are represented with "
 var
-  m: string = "mMmMmmMm"
+  m = "mMmMmmMm"
   # Ye, I'm a native spanish speaker, and I'm very
   # surprised that this is allowed in Nim
-  ñ: string = "ñÑÑññññÑÑñ"
+  ñ = "ñÑÑññññÑÑñ"
   # Multi line string and also literal
-  o: string = """
+  o = """
 oOooO \hello\
 oOoo "oOoooOooO"
 """
@@ -59,8 +62,8 @@ echo p
 
 # Booleans
 var
-  q: bool = true
-  r: bool = false
+  q = true
+  r = false
   s: bool # false by default
 
 echo q
@@ -68,8 +71,10 @@ echo r
 echo s
 
 # Some operations with data types
-# Casting
-echo int(e)
+# Type conversion (casting is done using `cast`,
+# and is unsafe AFAIK or has less precision, I
+# don't remember)
+echo int(e) # or `e.int()` or `e.int` or `int e`
 echo float(c)
 
 # "Plain" division (i.e. returns an integer)
