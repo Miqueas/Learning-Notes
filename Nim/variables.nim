@@ -1,7 +1,7 @@
 # Variables are declared with 'var'
 var name = "Miqueas"
 
-# This is also allowed with 'let' and 'const' (i guess)
+# This is also allowed with 'let' and 'const'
 var
   x = 1
   y = 2
@@ -9,7 +9,7 @@ var
 
 # 'let' is used to make a inmutable variable and
 # don't need to be known at compile time (i.e. at
-# run-time, using a function or something).but
+# run-time, using a function or something). but
 # after is set, cannot be changed
 let number = 29
 
