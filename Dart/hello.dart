@@ -1,4 +1,14 @@
 // An small overview of Dart
+
+/* Some important concepts
+
+  - Everything inside variables is an object (including `null`)
+  - Dart is strongly typed (but also has type inference)
+  - Dart has null safety since version 2.12
+  - Dart support generics
+
+*/
+
 int fib(int n) {
   if (n < 2) return n;
 
