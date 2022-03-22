@@ -38,4 +38,10 @@ void main() {
 
   print(finalVar);
   print(constant);
+
+  // `late` variables, this kind of variables are created with the keyword
+  // `late` and indicates that is a variable initialized after the declaration
+  late String h;
+  h = "Hh";
+  print(h);
 }
