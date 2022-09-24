@@ -1,11 +1,7 @@
 # Dart Notes
 
-Some code I wrote while learning Dart
+Here are some notes while learning Dart watching the [Open Bootcamp](https://open-bootcamp.com/cursos/dart) course.
 
-## About Dart
+## Legacy
 
-Dart is a programming language specifically made for Flutter, created by Google. It can also be used for other things but Flutter is the main reason to use it.
-
-## Resources
-
-I'm reading about Dart here: https://dart.dev/guides/language/language-tour
+The "Legacy" folder has some commented code that I wrote while I was learning about Dart using the official documentation.
