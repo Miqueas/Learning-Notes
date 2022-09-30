@@ -56,5 +56,6 @@ void main() {
     Ipsum
 """;
 
-  print(message);
+  // String concatenation is done using the plus (+) symbol
+  print(message + " dolor sit amet");
 }
