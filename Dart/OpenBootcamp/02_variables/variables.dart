@@ -1,4 +1,4 @@
-void main() {
+void main(List<String> args) {
   // This is a single-line comment.
 
   /*
