@@ -8,8 +8,13 @@ var
   # nums2 is `array[5, int]`
   nums2 = [ 1, 3, 5, 7, 9 ]
   strlist = [ "hello", "world" ]
-  # An array that can be indexed from 0 to 4, this is also valid
-  # using Enums instead of integers literal
+  # An array that can be indexed from 0 to 4. In general, you can use a
+  # range in the form 'from' .. 'to', either inclusive or exclusive. By
+  # example:
+  #   const MIN = 0
+  #   const MAX = 10
+  #   var arr: array[MIN..MAX, int]
+  #   arr[0] = 0
   arr: array[0..4, int]
 
 arr = nums1
