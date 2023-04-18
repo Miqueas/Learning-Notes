@@ -22,9 +22,10 @@ echo toString(0)
 echo toString(true)
 echo toString(false)
 
-#[
-  Nim also supports operator overloading, but i think
-  that's a more advanced feature that i'll cover later,
-  including that thing about "calling operators like
-  functions"
-]#
+# Nim also has `func`, which is just a `proc` with the
+# {.noSideEffect.} pragma (yes, is just syntax sugar):
+
+func add(x, y: int): int {.inline.} =
+  x + y
+
+echo add(937, 239)
