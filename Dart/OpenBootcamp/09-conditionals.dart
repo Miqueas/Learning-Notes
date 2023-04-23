@@ -1,4 +1,4 @@
-void main(List<String> args) {
+void main() {
   // Conditionals in Dart are just `if` and `switch`, that's it
   int n = 29;
 

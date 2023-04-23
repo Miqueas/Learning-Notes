@@ -1,4 +1,4 @@
-void main(List<String> args) {
+void main() {
   // I'm lazy about this shit xd
 
   var numbers = [ 2, 4, 6, 8 ];

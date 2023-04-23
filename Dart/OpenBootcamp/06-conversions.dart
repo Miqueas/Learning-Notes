@@ -1,4 +1,4 @@
-void main(List<String> args) {
+void main() {
   String oneHundredString = 100.toString();
   int oneHundredInteger = int.parse(oneHundredString);
 

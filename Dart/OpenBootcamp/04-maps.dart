@@ -1,4 +1,4 @@
-void main(List<String> args) {
+void main() {
   var user = {
     "name": "Miqueas Martinez",
     "username": "average_nerd",

@@ -1,4 +1,4 @@
-void main(List<String> args) {
+void main() {
   // Idk why the teacher decided to talk about this so late...
   // Anyway, Dart operators are mostly the usual as in other languages.
   // Some of these can be slightly different, for more details, check:

@@ -3,7 +3,7 @@ enum AppStatus {
   RUNNING
 }
 
-void main(List<String> args) {
+void main() {
   print(AppStatus.STOPPED);
   print("Switching app status from '" + AppStatus.STOPPED.toString() + "' to '" + AppStatus.RUNNING.toString() + "'");
   print(AppStatus.RUNNING);

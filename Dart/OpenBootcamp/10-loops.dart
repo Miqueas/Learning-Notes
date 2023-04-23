@@ -1,4 +1,4 @@
-void main(List<String> args) {
+void main() {
   // Dart has the same loops as much other languages:
   //   while, do-while, for, for-in
   int n = 0;
