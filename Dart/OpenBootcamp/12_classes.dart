@@ -23,7 +23,7 @@ class Person {
   }
 }
 
-void main(List<String> args) {
+void main() {
   final me = Person("Miqueas", 22);
   me.greet();
   me.say("hey!");
