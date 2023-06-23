@@ -2,29 +2,27 @@ import std.stdio;
 
 struct Person {
   string name;
-  uint age;
-  bool can_vote;
+  ubyte age;
 
-  // Custom constructor for Person
-  this(uint age, string name) {
-    this.age = age;
+  this(string name, ubyte age) {
     this.name = name;
-    this.can_vote = (age >= 18) ? true : false;
+    this.age = age;
   }
 
   void greet() {
-    writeln("Hi, my name is ", this.name, " and I'm ", this.age, "yo!");
+    writeln("Hi! My name is ", this.name, " and I'm ", this.age, "yo!");
   }
 
-  void say(string msg = "yo!") {
-    writeln(this.name, ": ", msg);
+  void say(string message) {
+    writeln(this.name, ": ", message);
   }
 }
 
 void main() {
-  auto j = Person(32, "Juan");
-  writeln(j);
-  j.greet();
-  j.say();
-  j.say("wanna try D?");
+  auto me = Person("Miqueas", 22);
+  me.greet();
+  me.say("yo!");
+  me.say("wanna try D?");
+
+  writeln(me);
 }
