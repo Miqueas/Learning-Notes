@@ -26,7 +26,7 @@ Personal place where I put some code while learning languages or something
 
 Ok, there are some languages I have tried before and my opinion
 
-  - **Python**: my brother in christ, please fix your performance... still is cool ngl
+  - **Python**: my brother in christ, please fix your performance... still cool ngl
   - **Ruby**: my beloved, anybody understand you, but i really think you're fun af but also weird af, i love it
   - **C#**: **i hope some day u will disappear from existence**
   - **Java**: **i hope some day u will disappear from existence**
