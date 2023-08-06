@@ -1,7 +1,5 @@
 #[
-  This pattern can be used when u want to take care how
-  an specific object property are used. Very similar to
-  Ruby
+  Encapsulation
 ]#
 
 type Person* = object
