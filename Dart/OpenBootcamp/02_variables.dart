@@ -37,7 +37,7 @@ void main() {
   print(pi.runtimeType);
   print(dartIsCool.runtimeType);
 
-  // Note that Dart is null-safe, so Dart code is usually secure.
+  // Note that Dart is null-safe, so Dart code is usually safe.
   // There's also `final` and `const` in Dart and the difference
   // is that:
   //     - `final` can be set only once, but can be any value.
