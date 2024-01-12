@@ -4,6 +4,9 @@
 // pensados para apps móviles.
 import 'package:flutter/material.dart';
 
+// Cabde destacar que en el curso, el instructor hizo algo un poco más elaborado, pero yo no lo hice
+// igual porque bueno, se supone que es el capítulo introductorio.
+
 void main() {
   // Toda app Flutter empieza aquí, llamamos a la función `runApp()` para iniciar la aplicación.
   // Esta función toma como argumento un `Widget`, puede ser cualquiera y debido a que en Flutter
