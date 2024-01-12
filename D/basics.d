@@ -96,10 +96,14 @@ void main() {
     if (e <= 20) break;
   }
 
-  // And there's do-while, but bruh, u may known how it works
+  // `do-while` block
+  do {
+    writeln("Do-While! N = ", e);
+    e -= 2;
+  } while (e > 0);
 
   // D also has a thing called `foreach_reverse`
-  foreach_reverse (a; [ 2, 4, 6, 8, 10]) {
+  foreach_reverse (a; [ 2, 4, 6, 8, 10 ]) {
     writeln(a);
   }
 }
