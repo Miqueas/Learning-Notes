@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
 
+const appTitle = "Flutter OpenBootcamp";
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -9,8 +11,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Scaffold & AppBar",
-      home: MyHomePage(title: "FloatingActionButton & BottomAppBar"),
+      title: appTitle,
+      home: MyHomePage(title: appTitle),
     );
   }
 }
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   final String title;
 
-  const MyHomePage({super.key, required this.title}) : super();
+  const MyHomePage({super.key, required this.title});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
