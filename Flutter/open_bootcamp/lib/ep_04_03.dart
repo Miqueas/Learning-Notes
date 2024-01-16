@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   final String title;
 
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({super.key, required this.title}) : super();
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
