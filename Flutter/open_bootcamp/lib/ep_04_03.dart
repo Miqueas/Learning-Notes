@@ -9,26 +9,52 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: appTitle,
-      home: MyHomePage(title: appTitle),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(appTitle),
+          actions: const [
+            MyLikeButton(),
+          ],
+        ),
+        floatingActionButton: FloatingActionButton.extended(
+          onPressed: () {},
+          icon: const Icon(Icons.add),
+          label: const Text("New"),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.explore),
+              label: "Explore",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle),
+              label: "Account",
+            ),
+          ]
+        )
+      ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  final String title;
-
-  const MyHomePage({super.key, required this.title}) : super();
+class MyLikeButton extends StatefulWidget {
+  const MyLikeButton({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyLikeButton> createState() => _MyLikeButtonState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  Icon likedIcon = const Icon(Icons.favorite_border);
-  bool liked = false;
+class _MyLikeButtonState extends State<MyLikeButton> {
+  var likedIcon = const Icon(Icons.favorite_border);
+  var liked = false;
 
   void _doLike() {
     setState(() {
@@ -39,30 +65,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        actions: [
-          IconButton(onPressed: _doLike, icon: likedIcon)
-        ],
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: _doLike,
-        icon: likedIcon,
-        label: const Text("Like"),
-      ),
-      bottomNavigationBar: const BottomAppBar(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Icon(Icons.home),
-            Icon(Icons.explore),
-            Icon(Icons.add),
-            Icon(Icons.inbox),
-            Icon(Icons.account_circle)
-          ]
-        ),
-      ),
-    );
+    return IconButton(onPressed: _doLike, icon: likedIcon);
   }
 }

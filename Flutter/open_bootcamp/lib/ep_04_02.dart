@@ -9,26 +9,31 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: appTitle,
-      home: MyHomePage(title: appTitle),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(appTitle),
+          actions: const [
+            MyLikeButton(),
+          ],
+        )
+      ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  final String title;
-
-  const MyHomePage({super.key, required this.title}) : super();
+class MyLikeButton extends StatefulWidget {
+  const MyLikeButton({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyLikeButton> createState() => _MyLikeButtonState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  Icon likedIcon = const Icon(Icons.favorite_border);
-  bool liked = false;
+class _MyLikeButtonState extends State<MyLikeButton> {
+  var likedIcon = const Icon(Icons.favorite_border);
+  var liked = false;
 
   void _doLike() {
     setState(() {
@@ -39,13 +44,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        actions: [
-          IconButton(onPressed: _doLike, icon: likedIcon)
-        ],
-      ),
-    );
+    return IconButton(onPressed: _doLike, icon: likedIcon);
   }
 }
