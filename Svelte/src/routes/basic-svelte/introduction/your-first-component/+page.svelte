@@ -2,5 +2,7 @@
   let name = "Svelte"
 </script>
 
-<h1>Hello, {name}!</h1>
-<p>{name.toUpperCase()}</p>
+<main>
+  <h1>Hello, {name}!</h1>
+  <p>{name.toUpperCase()}</p>
+</main>

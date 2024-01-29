@@ -28,8 +28,8 @@ also ship components as standalone packages that work anywhere.
         <ul>
           <li><a href="/basic-svelte/introduction/welcome-to-svelte">Welcome to Svelte</a></li>
           <li><a href="/basic-svelte/introduction/your-first-component">Your first component</a></li>
-          <li>Dynamic attributes</li>
-          <li>Styling</li>
+          <li><a href="/basic-svelte/introduction/dynamic-attributes">Dynamic attributes</a></li>
+          <li><a href="/basic-svelte/introduction/styling">Styling</a></li>
           <li>Nested components</li>
           <li>HTML tags</li>
         </ul>
