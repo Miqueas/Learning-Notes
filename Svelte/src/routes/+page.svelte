@@ -30,8 +30,13 @@ also ship components as standalone packages that work anywhere.
           <li><a href="/basic-svelte/introduction/your-first-component">Your first component</a></li>
           <li><a href="/basic-svelte/introduction/dynamic-attributes">Dynamic attributes</a></li>
           <li><a href="/basic-svelte/introduction/styling">Styling</a></li>
-          <li>Nested components</li>
-          <li>HTML tags</li>
+          <li><a href="/basic-svelte/introduction/nested-components">Nested components</a></li>
+          <li><a href="/basic-svelte/introduction/html-tags">HTML tags</a></li>
+        </ul>
+      </li>
+      <li>Reactivity
+        <ul>
+          <li><a href="/basic-svelte/reactivity/assignments">Assignments</a></li>
         </ul>
       </li>
     </ul>
