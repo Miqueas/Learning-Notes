@@ -37,6 +37,9 @@ also ship components as standalone packages that work anywhere.
       <li>Reactivity
         <ul>
           <li><a href="/basic-svelte/reactivity/assignments">Assignments</a></li>
+          <li><a href="/basic-svelte/reactivity/declarations">Declarations</a></li>
+          <li><a href="/basic-svelte/reactivity/statements">Statements</a></li>
+          <li><a href="/basic-svelte/reactivity/updating-arrays-and-objects">Updating arrays and objects</a></li>
         </ul>
       </li>
     </ul>
