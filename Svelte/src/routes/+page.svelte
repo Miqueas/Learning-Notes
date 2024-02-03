@@ -49,6 +49,16 @@ also ship components as standalone packages that work anywhere.
           <li><a href="/basic-svelte/props/spread-props">Spread props</a></li>
         </ul>
       </li>
+      <li>Logic
+        <ul>
+          <li><a href="/basic-svelte/logic/if-blocks">If blocks</a></li>
+          <li><a href="/basic-svelte/logic/else-blocks">Else blocks</a></li>
+          <li><a href="/basic-svelte/logic/else-if-blocks">Else-if blocks</a></li>
+          <li><a href="/basic-svelte/logic/each-blocks">Each blocks</a></li>
+          <li><a href="/basic-svelte/logic/keyed-each-blocks">Keyed each blocks</a></li>
+          <li><a href="/basic-svelte/logic/await-blocks">Await blocks</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li>Advanced Svelte</li>
