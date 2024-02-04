@@ -9,13 +9,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: appTitle,
-      home: Scaffold(
-        appBar: AppBar(title: const Text("SnackBar")),
-        // Intentar llamar al SnackBar desde aquí da error porque no hay un Scaffold en `context`
-        body: const Center(child: MySnackBar())
+      home: Material(
+        child: Scaffold(
+          // Intentar llamar al SnackBar desde aquí da error porque no hay un Scaffold en `context`
+          body: Center(child: MySnackBar())
+        ),
       ),
     );
   }
