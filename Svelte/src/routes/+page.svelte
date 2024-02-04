@@ -59,6 +59,16 @@ also ship components as standalone packages that work anywhere.
           <li><a href="/basic-svelte/logic/await-blocks">Await blocks</a></li>
         </ul>
       </li>
+      <li>Events
+        <ul>
+          <li><a href="/basic-svelte/events/dom-events">DOM events</a></li>
+          <li><a href="/basic-svelte/events/inline-handlers">Inline handlers</a></li>
+          <li><a href="/basic-svelte/events/event-modifiers">Event modifiers</a></li>
+          <li><a href="/basic-svelte/events/component-events">Component events</a></li>
+          <li><a href="/basic-svelte/events/event-forwarding">Event forwarding</a></li>
+          <li><a href="/basic-svelte/events/dom-event-forwarding">DOM event forwarding</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li>Advanced Svelte</li>
