@@ -69,6 +69,13 @@ also ship components as standalone packages that work anywhere.
           <li><a href="/basic-svelte/events/dom-event-forwarding">DOM event forwarding</a></li>
         </ul>
       </li>
+      <li>Bindings
+        <ul>
+          <li><a href="/basic-svelte/bindings/text-inputs">Text inputs</a></li>
+          <li><a href="/basic-svelte/bindings/numeric-inputs">Numeric inputs</a></li>
+          <li><a href="/basic-svelte/bindings/checkbox-inputs">Checkbox inputs</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li>Advanced Svelte</li>
