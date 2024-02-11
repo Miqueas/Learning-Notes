@@ -75,6 +75,7 @@ also ship components as standalone packages that work anywhere.
           <li><a href="/basic-svelte/bindings/numeric-inputs">Numeric inputs</a></li>
           <li><a href="/basic-svelte/bindings/checkbox-inputs">Checkbox inputs</a></li>
           <li><a href="/basic-svelte/bindings/select-bindings">Select bindings</a></li>
+          <li><a href="/basic-svelte/bindings/group-inputs">Group inputs</a></li>
         </ul>
       </li>
     </ul>
