@@ -38,11 +38,24 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Center(child: Text("Escribe algo")),
-          Center(child: SizedBox(width: 220, child: TextField(
-            onChanged: (String value) { setState(() { _input = value; }); },
-          ))),
-          Center(child: Text("\"$_input\""),)
+          const Center(
+            child: Text("Escribe algo"),
+          ),
+          Center(
+            child: SizedBox(
+              width: 220,
+              child: TextField(
+                onChanged: (String value) {
+                  setState(() {
+                    _input = value;
+                  });
+                },
+              )
+            )
+          ),
+          Center(
+            child: Text("\"$_input\""),
+          )
         ],
       ),
     );
