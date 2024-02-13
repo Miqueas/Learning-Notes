@@ -1,0 +1,21 @@
+let nombre = "Josué";
+let apellido = "Martínez";
+let estudiante = nombre + ' ' + apellido;
+let estudianteMayus = estudiante.toUpperCase();
+let estudianteMinus = estudiante.toLowerCase();
+let estudianteLetras = estudiante.length;
+let nombrePrimeraLetra = nombre[0];
+let nombreUltimaLetra = apellido[apellido.length - 1];
+let estudianteSinEspacios = estudiante.replace(' ', '');
+let estudianteTieneNombre = estudiante.includes(nombre);
+
+console.log(nombre);
+console.log(apellido);
+console.log(estudiante);
+console.log(estudianteMayus);
+console.log(estudianteMinus);
+console.log(estudianteLetras);
+console.log(nombrePrimeraLetra);
+console.log(nombreUltimaLetra);
+console.log(estudianteSinEspacios);
+console.log(estudianteTieneNombre);

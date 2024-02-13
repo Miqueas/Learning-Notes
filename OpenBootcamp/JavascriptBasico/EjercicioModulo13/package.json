@@ -1,0 +1,15 @@
+{
+  "name": "ejercicio-modulo-13",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --fix ."
+  },
+  "author": "Josué Martínez",
+  "license": "Zlib",
+  "devDependencies": {
+    "eslint": "^8.33.0"
+  }
+}

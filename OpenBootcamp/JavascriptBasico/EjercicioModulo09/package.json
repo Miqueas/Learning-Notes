@@ -1,0 +1,14 @@
+{
+  "name": "ejercicio-modulo-9",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Josué Martínez",
+  "license": "MIT",
+  "dependencies": {
+    "winston": "^3.8.2"
+  }
+}

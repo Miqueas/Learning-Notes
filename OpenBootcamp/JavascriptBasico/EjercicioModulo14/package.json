@@ -1,0 +1,11 @@
+{
+  "name": "ejercicio-modulo-14",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "http-server ."
+  },
+  "author": "Josué Martínez",
+  "license": "Zlib"
+}
