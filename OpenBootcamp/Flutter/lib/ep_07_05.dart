@@ -27,36 +27,34 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  DateTime? _date;
+  TimeOfDay? _time;
 
-  Future<void> doShowDatePicker() async {
-    _date = await showDatePicker(
+  Future<void> doShowTimePicker() async {
+    _time = await showTimePicker(
       context: context,
-      firstDate: DateTime(1900),
-      lastDate: DateTime.now(),
-      initialDate: DateTime.now(),
+      initialTime: const TimeOfDay(hour: 0, minute: 0),
     );
-
+    
     setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    var template = (_date == null)
-      ? "Aún no has seleccionado una fecha"
-      : "Fecha seleccionada: ${_date?.day}/${_date?.month}/${_date?.year}";
+    var template = (_time == null)
+      ? "Aún no has seleccionado una hora"
+      : "Hora seleccionada: ${_time?.hour}:${_time?.minute}";
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("DatePicker"),
+        title: const Text("TimePicker"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
             child: ElevatedButton(
-              onPressed: doShowDatePicker,
-              child: const Text("Seleccionar fecha")
+              onPressed: doShowTimePicker,
+              child: const Text("Seleccionar hora")
             ),
           ),
           Center(
