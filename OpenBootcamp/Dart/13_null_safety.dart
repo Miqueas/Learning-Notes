@@ -1,5 +1,5 @@
 void main() {
-  // NOTA: descomentalas líneas necesarias para ver los errores
+  // NOTA: descomenta las líneas necesarias para ver los errores
 
   // Non-nullable
   int x;
