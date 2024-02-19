@@ -1,9 +1,10 @@
 # Dart Notes
 
-Here are some notes while learning Dart and there are 2 folders:
+Learning Dart from the official [documentation][Docs]
 
-  - __Docs__: this contains code wrote by learning Dart from the official docs
-  - __OpenBootcamp__: and this one by learning Dart from the [Open Bootcamp][OB] [course][OBCourse] (spanish)
+## About Dart
+
+Dart is a programming language specifically made for Flutter, created by Google. It can also be used for other things but Flutter is the main reason to use it.
 
 ### Some resources
 
@@ -11,5 +12,4 @@ Here are some notes while learning Dart and there are 2 folders:
   - https://dart.dev/tools/webdev
   - [Dart Packages](https://pub.dev/)
 
-[OB]: https://open-bootcamp.com/
-[OBCourse]: https://open-bootcamp.com/cursos/dart
+[Docs]: https://dart.dev/language
