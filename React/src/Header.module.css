@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  padding: 6rem 1rem;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.header-logo {
+  width: 60px;
+  margin-right: 20px;
+}
+
+.header-content {
+  margin-right: 30px;
+  flex-direction: column;
+
+  > h1 {
+    font-weight: bold;
+  }
+}
