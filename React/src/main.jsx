@@ -1,11 +1,12 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import Header from "./Header.jsx"
-import Home from "./Home.jsx"
+import { BrowserRouter } from "react-router-dom"
+import App from "./App"
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.body).render(
   <React.StrictMode>
-    <Header/>
-    <Home/>
+    <BrowserRouter>
+      <App/>
+    </BrowserRouter>
   </React.StrictMode>
 )

@@ -14,8 +14,8 @@
 .header-content {
   margin-right: 30px;
   flex-direction: column;
+}
 
-  > h1 {
-    font-weight: bold;
-  }
+.header-title {
+  font-weight: bold;
 }
