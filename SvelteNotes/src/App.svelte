@@ -1,10 +1,7 @@
 <script>
+  import Header from "./lib/Header.svelte";
+  import Home from "./lib/Home.svelte";
 </script>
 
-<header>
-</header>
-<main>
-</main>
-
-<style>
-</style>
+<Header/>
+<Home/>
