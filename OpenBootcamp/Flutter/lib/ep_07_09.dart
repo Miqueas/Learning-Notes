@@ -1,79 +1,131 @@
 import "package:flutter/material.dart";
 
-const appTitle = "Flutter OpenBootcamp";
+void main() => runApp(const App());
 
-void main() => runApp(const MyApp());
+class Task {
+  Key id;
+  bool done = false;
+  String description;
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  Task(this.description) : id = ValueKey(description);
+}
+
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
-      home: Material(
-        child: MyHomePage(),
-      ),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text("Checkbox")),
+        body: const Padding(
+          padding: EdgeInsets.all(20),
+          child: TaskListView(),
+        )
+      )
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class TaskListView extends StatefulWidget {
+  const TaskListView({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<TaskListView> createState() => _TaskListViewState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  final List<String> _todos = [];
-  String _todo = "";
+
+class _TaskListViewState extends State<TaskListView> {
+  final _controller = TextEditingController();
+  final _tasks = <Task>[];
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Checkbox"),
-      ),
-      body: Align(
-        alignment: Alignment.center,
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: SizedBox(
-            width: 400,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: ListView.builder(
-                    padding: const EdgeInsets.all(20),
-                    itemCount: _todos.length,
-                    itemBuilder: (context, index) {
-                      return CheckboxListTile(
-                        value: false,
-                        title: Text(_todos[index]),
-                        onChanged: (value) => setState(() {}),
-                      );
-                    }
-                  )
-                ),
-                TextField(
-                  decoration: const InputDecoration(
-                    icon: Icon(Icons.add),
-                    border: OutlineInputBorder(),
-                    labelText: "Agrega una nueva tarea...",
-                    hintText: "Qué tienes pendiente por hacer?",
-                  ),
-                  onSubmitted: (value) => setState(() {
-                    _todos.add(value);
-                  }),
-                )
-              ],
-            ),
-          ),
+    final completed = _tasks.where((task) => task.done == true).toList();
+    final remaining = _tasks.where((task) => task.done == false).toList();
+
+    return Column(
+      children: [
+        Row(
+          children: [
+            const Text("Pending", style: TextStyle(fontWeight: FontWeight.bold)),
+            const Spacer(),
+            TextButton(
+              child: const Text("Clear pending tasks"),
+              onPressed: () => setState(() => _tasks.removeWhere((task) => task.done == false))
+            )
+          ]
         ),
-      )
+        Expanded(
+          child: ListView.builder(
+            itemCount: remaining.length,
+            itemBuilder: (context, index) => Row(
+              children: [
+                Checkbox(
+                  value: remaining[index].done,
+                  onChanged: (value) {
+                    setState(() => remaining[index].done = value ?? false);
+                  },
+                ),
+                Text(remaining[index].description),
+                const Spacer(),
+                IconButton(
+                  icon: const Icon(Icons.delete_forever),
+                  onPressed: () => setState(() => _tasks.removeWhere((element) => element.id == remaining[index].id))
+                )
+              ]
+            ),
+          )
+        ),
+        Row(
+          children: [
+            const Text("Done", style: TextStyle(fontWeight: FontWeight.bold)),
+            const Spacer(),
+            TextButton(
+              child: const Text("Clear completed tasks"),
+              onPressed: () => setState(() => _tasks.removeWhere((task) => task.done == true))
+            )
+          ]
+        ),
+        Expanded(
+          child: ListView.builder(
+            itemCount: completed.length,
+            itemBuilder: (context, index) => Row(
+              children: [
+                Checkbox(
+                  value: completed[index].done,
+                  onChanged: (value) {
+                    setState(() => completed[index].done = value ?? false);
+                  },
+                ),
+                Text(completed[index].description),
+                const Spacer(),
+                IconButton(
+                  icon: const Icon(Icons.delete_forever),
+                  onPressed: () => setState(() => _tasks.removeWhere((element) => element.id == completed[index].id))
+                )
+              ]
+            ),
+          )
+        ),
+        TextField(
+          controller: _controller,
+          decoration: const InputDecoration(
+            border: OutlineInputBorder(),
+            hintText: "Enter a new task"
+          ),
+          onSubmitted: (value) {
+            _controller.clear();
+            setState(() => _tasks.add(Task(value)));
+          },
+        )
+      ],
     );
   }
 }
