@@ -64,6 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 220,
               child: TextField(
                 controller: _textFieldController,
+                onChanged: (value) => _input = value,
               )
             )
           ),
