@@ -7,7 +7,7 @@ class Task {
   bool done = false;
   String description;
 
-  Task(this.description) : id = ValueKey(description);
+  Task(this.description) : id = UniqueKey();
 }
 
 class App extends StatelessWidget {
@@ -21,7 +21,7 @@ class App extends StatelessWidget {
         body: const Padding(
           padding: EdgeInsets.all(20),
           child: TaskListView(),
-        )
+        ),
       )
     );
   }
@@ -38,6 +38,7 @@ class TaskListView extends StatefulWidget {
 class _TaskListViewState extends State<TaskListView> {
   final _controller = TextEditingController();
   final _tasks = <Task>[];
+  final _deletedTasks = <Task>[];
 
   @override
   void dispose() {
@@ -104,31 +105,46 @@ class _TaskListViewState extends State<TaskListView> {
                 ),
               ),
               onDismissed: (direction) {
+                final taskIndex = _tasks.indexWhere((task) => task.id == remaining[index].id);
+                var thisTask = _tasks[taskIndex];
+
                 switch (direction) {
                   case DismissDirection.startToEnd:
-                    final taskIndex = _tasks.indexWhere((task) => task.id == remaining[index].id);
-                
-                    setState(() => _tasks[taskIndex].done = true);
+                    setState(() => thisTask.done = true);
                     break;
                   case DismissDirection.endToStart:
                     setState(() {
-                      _tasks.removeWhere((element) => element.id == remaining[index].id);
+                      _deletedTasks.add(thisTask);
+                      _tasks.remove(thisTask);
                     });
+
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("Deleted task \"${thisTask.description}\""),
+                        action: SnackBarAction(
+                          label: "Undo",
+                          onPressed: () {
+                            setState(() {
+                              _tasks.insert(taskIndex, thisTask);
+                              _deletedTasks.remove(thisTask);
+                            });
+                          }
+                        ),
+                      )
+                    );
                     break;
                   default:
+                    break;
                 }
               },
               child: Card(
                 child: ListTile(
-                  title: Text(remaining[index].description),
-                  leading: Checkbox(
-                    value: remaining[index].done,
-                    onChanged: (value) {
-                      final taskIndex = _tasks.indexWhere((task) => task.id == remaining[index].id);
-                
-                      setState(() => _tasks[taskIndex].done = value ?? false);
-                    },
+                  title: Text(remaining[index].description,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold
+                    )
                   ),
+                  leading: const Icon(Icons.pending_actions),
                 ),
               ),
             ),
@@ -186,31 +202,46 @@ class _TaskListViewState extends State<TaskListView> {
                 ),
               ),
               onDismissed: (direction) {
+                final taskIndex = _tasks.indexWhere((task) => task.id == completed[index].id);
+                var thisTask = _tasks[taskIndex];
+
                 switch (direction) {
                   case DismissDirection.startToEnd:
-                    final taskIndex = _tasks.indexWhere((task) => task.id == completed[index].id);
-                
-                    setState(() => _tasks[taskIndex].done = false);
+                    setState(() => thisTask.done = false);
                     break;
                   case DismissDirection.endToStart:
                     setState(() {
-                      _tasks.removeWhere((element) => element.id == completed[index].id);
+                      _deletedTasks.add(thisTask);
+                      _tasks.remove(thisTask);
                     });
+
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("Deleted task \"${thisTask.description}\""),
+                        action: SnackBarAction(
+                          label: "Undo",
+                          onPressed: () {
+                            setState(() {
+                              _tasks.insert(taskIndex, thisTask);
+                              _deletedTasks.remove(thisTask);
+                            });
+                          }
+                        ),
+                      )
+                    );
                     break;
                   default:
+                    break;
                 }
               },
               child: Card(
                 child: ListTile(
-                  title: Text(completed[index].description),
-                  leading: Checkbox(
-                    value: completed[index].done,
-                    onChanged: (value) {
-                      final taskIndex = _tasks.indexWhere((task) => task.id == completed[index].id);
-
-                      setState(() => _tasks[taskIndex].done = value ?? false);
-                    },
+                  title: Text(completed[index].description,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold
+                    )
                   ),
+                  leading: const Icon(Icons.done),
                 ),
               ),
             ),
