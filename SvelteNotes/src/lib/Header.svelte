@@ -1,5 +1,5 @@
 <header class="header">
-  <img alt="Svelte logo" src="svelte.svg" class="header-logo"/>
+  <img alt="Svelte logo" src="/svelte.svg" class="header-logo"/>
   <div class="header-content">
     <h1 class="header-title">Svelte Notes</h1>
     <p>Learning Svelte from <a href="https://learn.svelte.dev/" target="_blank">learn.svelte.dev</a>.</p>

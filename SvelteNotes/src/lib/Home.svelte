@@ -1,3 +1,23 @@
+<script>
+  import { Link, linkHandle } from "svelte-micro"
+  import { getRouteByName } from "./routes"
+
+  const routes = [
+    [ "Welcome",
+      "Your first component",
+      "Dynamic attributes",
+      "Styling",
+      "Nested components",
+      "HTML tags",
+    ],
+    [ "Assignments",
+      "Declarations",
+      "Statements",
+      "Updating arrays and objects",
+    ]
+  ]
+</script>
+
 <main class="home">
   <h5>What's Svelte?</h5>
 
@@ -16,4 +36,26 @@
   </blockquote>
   
   <p>That said, the following links correspond to every section in the tutorial.</p>
+
+  <ul>
+    <li><Link href="/">Home</Link></li>
+    <li>Basic Svelte
+      <ul>
+        <li>Introduction
+          <ul>
+            {#each routes[0] as route}
+              <li><Link href={getRouteByName(route).path}>{getRouteByName(route).name}</Link></li>
+            {/each}
+          </ul>
+        </li>
+        <li>Reactivity
+          <ul>
+            {#each routes[1] as route}
+              <li><Link href={getRouteByName(route).path}>{getRouteByName(route).name}</Link></li>
+            {/each}
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </main>

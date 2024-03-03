@@ -19,8 +19,10 @@
   --white: #fafafa;
   --black: #16161b;
 
-  --font-family: "Sofia Sans", sans-serif;
+  --font-family: "Inter", sans-serif;
   font-family: var(--font-family);
+  font-optical-sizing: auto;
+  font-weight: normal;
   font-size: 12pt;
 
   color-scheme: light dark;
