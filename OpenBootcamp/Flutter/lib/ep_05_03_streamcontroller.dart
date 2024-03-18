@@ -1,8 +1,6 @@
 import "package:flutter/material.dart";
 import "dart:async";
 
-const appTitle = "Flutter OpenBootcamp";
-
 void main() => runApp(const MyApp());
 
 class MyCountController {
@@ -24,11 +22,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
-      home: Material(
-        child: MyHome(),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text("StreamController")),
+        body: const Center(
+          child: MyHome()
+        ),
       ),
     );
   }
@@ -42,18 +41,18 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
-  final _countController = MyCountController();
+  final countController = MyCountController();
 
   @override
   void dispose() {
-    _countController.dispose();
+    countController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<int>(
-      stream: _countController.stream,
+      stream: countController.stream,
       initialData: 0,
       builder: (context, snapshot) {
         return Column(
@@ -61,7 +60,7 @@ class _MyHomeState extends State<MyHome> {
           children: [
             Text("${snapshot.data}"),
             IconButton.filled(
-              onPressed: _countController.doIncrement,
+              onPressed: countController.doIncrement,
               icon: const Icon(Icons.add),
             )
           ],
