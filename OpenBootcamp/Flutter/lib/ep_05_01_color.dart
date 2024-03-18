@@ -1,8 +1,6 @@
 import "package:flutter/material.dart";
 import "dart:math";
 
-const appTitle = "Flutter OpenBootcamp";
-
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -10,10 +8,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
-      home: Material(child: MyHome()),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text("Color")),
+        body: const Center(
+          child: MyHome()
+        )
+      ),
     );
   }
 }
@@ -26,18 +27,18 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
-  var _red = 0;
-  var _green = 0;
-  var _blue = 0;
-  var _color = Color(Colors.black.value);
+  var red = 0;
+  var green = 0;
+  var blue = 0;
+  var color = Color(Colors.black.value);
 
   void _doChangeColor() {
-    _red = Random.secure().nextInt(256);
-    _green = Random.secure().nextInt(256);
-    _blue = Random.secure().nextInt(256);
+    red = Random.secure().nextInt(256);
+    green = Random.secure().nextInt(256);
+    blue = Random.secure().nextInt(256);
 
     setState(() {
-      _color = Color.fromRGBO(_red, _green, _blue, 1);
+      color = Color.fromRGBO(red, green, blue, 1);
     });
   }
 
@@ -50,7 +51,7 @@ class _MyHomeState extends State<MyHome> {
           width: 200,
           height: 200,
           decoration: BoxDecoration(
-            color: _color,
+            color: color,
             borderRadius: const BorderRadius.all(Radius.circular(10)),
           ),
         ),

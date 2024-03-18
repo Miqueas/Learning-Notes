@@ -1,7 +1,5 @@
 import "package:flutter/material.dart";
 
-const appTitle = "Flutter OpenBootcamp";
-
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -9,11 +7,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
-      home: Material(
-        child: MyStepper(),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text("Stepper")),
+        body: const MyStepper(),
       ),
     );
   }
@@ -27,26 +24,26 @@ class MyStepper extends StatefulWidget {
 }
 
 class _MyStepperState extends State<MyStepper> {
-  var _currentStep = 0;
+  var currentStep = 0;
 
   void doNextStep() {
     setState(() {
-      if (_currentStep == 5) return;
-      _currentStep++;
+      if (currentStep == 5) return;
+      currentStep++;
     });
   }
 
   void doCancelStep() {
     setState(() {
-      if (_currentStep == 0) return;
-      _currentStep--;
+      if (currentStep == 0) return;
+      currentStep--;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Stepper(
-      currentStep: _currentStep,
+      currentStep: currentStep,
       onStepContinue: doNextStep,
       onStepCancel: doCancelStep,
       steps: const [

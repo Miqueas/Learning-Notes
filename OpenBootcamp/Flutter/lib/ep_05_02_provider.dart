@@ -1,8 +1,6 @@
 import "package:flutter/material.dart";
 import "package:provider/provider.dart";
 
-const appTitle = "Flutter OpenBootcamp";
-
 void main() => runApp(const MyApp());
 
 class MyCountProvider extends ChangeNotifier {
@@ -22,12 +20,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
-      home: Material(
-        child: ChangeNotifierProvider(
+      home: Scaffold(
+        appBar: AppBar(title: const Text("Provider")),
+        body: ChangeNotifierProvider(
           create: (_) => MyCountProvider(0),
-          child: const MyHome(),
+          child: const Center(
+            child: MyHome()
+          ),
         )
       ),
     );
