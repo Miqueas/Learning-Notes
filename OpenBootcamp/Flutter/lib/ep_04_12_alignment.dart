@@ -1,7 +1,5 @@
 import "package:flutter/material.dart";
 
-const appTitle = "Flutter OpenBootcamp";
-
 void main() => runApp(const MyLayout());
 
 class MyCenter extends StatelessWidget {
@@ -9,11 +7,10 @@ class MyCenter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
-      home: Material(
-        child: Center(
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text("Alignment")),
+        body: const Center(
           child: Text("Widget centrado"),
         ),
       ),
@@ -26,11 +23,10 @@ class MyLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
-      home: Material(
-        child: Row(
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text("Alignment")),
+        body: const Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Column(

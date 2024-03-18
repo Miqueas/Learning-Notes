@@ -2,8 +2,6 @@ import "package:flutter/cupertino.dart";
 import "package:flutter/material.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
 
-const appTitle = "Flutter OpenBootcamp";
-
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -11,11 +9,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
+    return MaterialApp(
       home: Scaffold(
-        body: Center(
+        appBar: AppBar(title: const Text("Icons")),
+        body: const Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

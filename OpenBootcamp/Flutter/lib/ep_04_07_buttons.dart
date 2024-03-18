@@ -1,7 +1,5 @@
 import "package:flutter/material.dart";
 
-const appTitle = "Flutter OpenBootcamp";
-
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -11,10 +9,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: appTitle,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text(appTitle, style: TextStyle(fontWeight: FontWeight.bold)),
+          title: const Text("Buttons"),
           actions: [
             const Text("IconButton"),
             IconButton(onPressed: () {}, icon: const Icon(Icons.phone_android)),

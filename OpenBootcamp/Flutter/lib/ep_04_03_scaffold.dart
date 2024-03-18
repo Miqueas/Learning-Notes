@@ -1,7 +1,5 @@
 import "package:flutter/material.dart";
 
-const appTitle = "Flutter OpenBootcamp";
-
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -11,26 +9,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: appTitle,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text(appTitle),
+          title: const Text("Scaffold"),
           actions: const [
             MyLikeButton(),
           ],
-        ),
-        drawer: const Drawer(
-          child: Column(
-            children: [
-              DrawerHeader(child: Text("Menu")),
-              Text("Item 1"),
-              Text("Item 2"),
-              Text("Item 3"),
-              Text("Item 4"),
-              Text("Item 5"),
-              Text("Item 6"),
-            ],
-          ),
         ),
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {},

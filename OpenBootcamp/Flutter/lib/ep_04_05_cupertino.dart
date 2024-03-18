@@ -1,18 +1,15 @@
 import "package:flutter/cupertino.dart";
 
-const appTitle = "Flutter OpenBootcamp";
-
 // Cambia entre los diferentes widgets, puesto que en ésta clase el instructor abarcó varios temas
-void main() => runApp(const MyCupertinoNavigationBar());
+void main() => runApp(const NavigationBar());
 
-class MyCupertinoPageScaffold extends StatelessWidget {
-  const MyCupertinoPageScaffold({super.key});
+class PageScaffold extends StatelessWidget {
+  const PageScaffold({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const CupertinoApp(
       debugShowCheckedModeBanner: false,
-      title: appTitle,
       home: CupertinoPageScaffold(
         child: Center(
           child: Text("Hello, world!")
@@ -22,14 +19,13 @@ class MyCupertinoPageScaffold extends StatelessWidget {
   }
 }
 
-class MyCupertinoTabScaffold extends StatelessWidget {
-  const MyCupertinoTabScaffold({super.key});
+class TabScaffold extends StatelessWidget {
+  const TabScaffold({super.key});
 
   @override
   Widget build(BuildContext context) {
     return CupertinoApp(
       debugShowCheckedModeBanner: false,
-      title: appTitle,
       home: CupertinoTabScaffold(
         tabBar: CupertinoTabBar(
           items: const [
@@ -87,14 +83,13 @@ class MyCupertinoTabScaffold extends StatelessWidget {
   }
 }
 
-class MyCupertinoNavigationBar extends StatelessWidget {
-  const MyCupertinoNavigationBar({super.key});
+class NavigationBar extends StatelessWidget {
+  const NavigationBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const CupertinoApp(
       debugShowCheckedModeBanner: false,
-      title: appTitle,
       home: CupertinoPageScaffold(
         navigationBar: CupertinoNavigationBar(
           leading: Icon(CupertinoIcons.back),

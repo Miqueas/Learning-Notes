@@ -1,8 +1,6 @@
 import "package:flutter/material.dart";
 
-const appTitle = "Flutter OpenBootcamp";
-
-void main() => runApp(const MyDivider());
+void main() => runApp(const MyExpanded());
 
 class MyExpanded extends StatelessWidget {
   const MyExpanded({super.key});
@@ -10,10 +8,9 @@ class MyExpanded extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
-      home: Material(
-        child: Row(
+      home: Scaffold(
+        appBar: AppBar(title: const Text("Expanded")),
+        body: Row(
           children: [
             Expanded(
               child: Container(
@@ -70,33 +67,34 @@ class MyPadding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
-      home: Material(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(40),
-              color: Colors.amber,
-              child: const Text("A",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24,),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(40),
-              child: Container(
+      home: Scaffold(
+        appBar: AppBar(title: const Text("Padding")),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
                 padding: const EdgeInsets.all(40),
-                color: Colors.red,
-                child: const Text("B",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24,
+                color: Colors.amber,
+                child: const Text("A",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24,),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(40),
+                child: Container(
+                  padding: const EdgeInsets.all(40),
+                  color: Colors.red,
+                  child: const Text("B",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -109,10 +107,9 @@ class MyDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
-      home: Material(
-        child: Column(
+      home: Scaffold(
+        appBar: AppBar(title: const Text("Divider")),
+        body: Column(
           children: [
             Expanded(
               child: Container(
