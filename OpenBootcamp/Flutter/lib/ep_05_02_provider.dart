@@ -1,12 +1,12 @@
 import "package:flutter/material.dart";
 import "package:provider/provider.dart";
 
-void main() => runApp(const MyApp());
+void main() => runApp(const App());
 
-class MyCountProvider extends ChangeNotifier {
+class CountProvider extends ChangeNotifier {
   int count = 0;
 
-  MyCountProvider(count);
+  CountProvider(count);
 
   void doIncrement() {
     ++count;
@@ -14,8 +14,8 @@ class MyCountProvider extends ChangeNotifier {
   }
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +23,9 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: const Text("Provider")),
         body: ChangeNotifierProvider(
-          create: (_) => MyCountProvider(0),
+          create: (_) => CountProvider(0),
           child: const Center(
-            child: MyHome()
+            child: Home()
           ),
         )
       ),
@@ -33,12 +33,12 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHome extends StatelessWidget {
-  const MyHome({super.key});
+class Home extends StatelessWidget {
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final countProvider = Provider.of<MyCountProvider>(context);
+    final countProvider = Provider.of<CountProvider>(context);
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,

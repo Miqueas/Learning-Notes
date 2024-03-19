@@ -2,15 +2,14 @@ import "package:flutter/material.dart";
 
 const imageURL = "https://www.andreasnesheim.no/wp-content/uploads/2019/05/logo_flutter_1080px_clr.png";
 
-void main() => runApp(const MyApp());
+void main() => runApp(const App());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(title: const Text("Images")),
         body: Center(

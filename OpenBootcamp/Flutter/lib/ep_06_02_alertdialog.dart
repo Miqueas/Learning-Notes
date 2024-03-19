@@ -1,20 +1,17 @@
 import "package:flutter/material.dart";
 
-const appTitle = "Flutter OpenBootcamp";
+void main() => runApp(const App());
 
-void main() => runApp(const MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
+    return MaterialApp(
       home: Material(
         child: Scaffold(
-          body: MyAlertDialog(),
+          appBar: AppBar(title: const Text("AlertDialog"),),
+          body: const MyAlertDialog(),
         )
       ),
     );

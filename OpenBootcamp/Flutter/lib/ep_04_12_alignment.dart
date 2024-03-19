@@ -1,9 +1,9 @@
 import "package:flutter/material.dart";
 
-void main() => runApp(const MyLayout());
+void main() => runApp(const Layout());
 
-class MyCenter extends StatelessWidget {
-  const MyCenter({super.key});
+class Centered extends StatelessWidget {
+  const Centered({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +18,8 @@ class MyCenter extends StatelessWidget {
   }
 }
 
-class MyLayout extends StatelessWidget {
-  const MyLayout({super.key});
+class Layout extends StatelessWidget {
+  const Layout({super.key});
 
   @override
   Widget build(BuildContext context) {

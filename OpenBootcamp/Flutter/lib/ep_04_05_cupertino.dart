@@ -9,7 +9,6 @@ class PageScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const CupertinoApp(
-      debugShowCheckedModeBanner: false,
       home: CupertinoPageScaffold(
         child: Center(
           child: Text("Hello, world!")
@@ -25,7 +24,6 @@ class TabScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoApp(
-      debugShowCheckedModeBanner: false,
       home: CupertinoTabScaffold(
         tabBar: CupertinoTabBar(
           items: const [
@@ -89,7 +87,6 @@ class NavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const CupertinoApp(
-      debugShowCheckedModeBanner: false,
       home: CupertinoPageScaffold(
         navigationBar: CupertinoNavigationBar(
           leading: Icon(CupertinoIcons.back),

@@ -1,9 +1,9 @@
 import "package:flutter/material.dart";
 import "dart:async";
 
-void main() => runApp(const MyApp());
+void main() => runApp(const App());
 
-class MyCountController {
+class CountController {
   var _count = 0;
   final _streamController = StreamController<int>();
 
@@ -17,8 +17,8 @@ class MyCountController {
   void dispose() => _streamController.close();
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,22 +26,22 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: const Text("StreamController")),
         body: const Center(
-          child: MyHome()
+          child: Home()
         ),
       ),
     );
   }
 }
 
-class MyHome extends StatefulWidget {
-  const MyHome({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
 
   @override
-  State<MyHome> createState() => _MyHomeState();
+  State<Home> createState() => _HomeState();
 }
 
-class _MyHomeState extends State<MyHome> {
-  final countController = MyCountController();
+class _HomeState extends State<Home> {
+  final countController = CountController();
 
   @override
   void dispose() {

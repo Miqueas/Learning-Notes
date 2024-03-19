@@ -1,29 +1,25 @@
 import "package:flutter/material.dart";
 
-const appTitle = "Flutter OpenBootcamp";
+void main() => runApp(const App());
 
-void main() => runApp(const MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
       home: Material(
         child: Scaffold(
           // Intentar llamar al SnackBar desde aquí da error porque no hay un Scaffold en `context`
-          body: Center(child: MySnackBar())
+          body: Center(child: Snackbar())
         ),
       ),
     );
   }
 }
 
-class MySnackBar extends StatelessWidget {
-  const MySnackBar({super.key});
+class Snackbar extends StatelessWidget {
+  const Snackbar({super.key});
 
   @override
   Widget build(BuildContext context) {

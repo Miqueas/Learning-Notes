@@ -1,10 +1,10 @@
 import "package:flutter/material.dart";
 import "dart:math";
 
-void main() => runApp(const MyApp());
+void main() => runApp(const App());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,21 +12,21 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: const Text("Color")),
         body: const Center(
-          child: MyHome()
+          child: Home()
         )
       ),
     );
   }
 }
 
-class MyHome extends StatefulWidget {
-  const MyHome({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
 
   @override
-  State<MyHome> createState() => _MyHomeState();
+  State<Home> createState() => _HomeState();
 }
 
-class _MyHomeState extends State<MyHome> {
+class _HomeState extends State<Home> {
   var red = 0;
   var green = 0;
   var blue = 0;
