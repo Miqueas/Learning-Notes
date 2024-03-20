@@ -1,19 +1,14 @@
 import "package:flutter/material.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:google_fonts/google_fonts.dart";
+void main() => runApp(const App());
 
-const appTitle = "Flutter OpenBootcamp";
-
-void main() => runApp(const MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
       home: Material(child: MySimpleDialog()),
     );
   }
@@ -57,8 +52,8 @@ class _MySimpleDialogState extends State<MySimpleDialog> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20),
+    return SizedBox(
+      width: 400,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
