@@ -1,33 +1,29 @@
 import "package:flutter/material.dart";
 
-const appTitle = "Flutter OpenBootcamp";
+void main() => runApp(const App());
 
-void main() => runApp(const MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
       home: Material(
-        child: MyHomePage(),
+        child: Home(),
       ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<Home> createState() => _HomeState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  String _input = "(algo)";
+class _HomeState extends State<Home> {
+  String _input = "";
   final _textFieldController = TextEditingController();
 
   void _doChangeSate() {
@@ -53,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("TextField"),
+        title: const Text("TextEditingController"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -64,7 +60,11 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 220,
               child: TextField(
                 controller: _textFieldController,
-                onChanged: (value) => _input = value,
+                onChanged: (value) {
+                  setState(() {
+                    _input = value;
+                  });
+                },
               )
             )
           ),
