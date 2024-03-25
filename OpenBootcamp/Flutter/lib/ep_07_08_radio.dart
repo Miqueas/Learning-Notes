@@ -1,7 +1,5 @@
 import "package:flutter/material.dart";
 
-const appTitle = "Flutter OpenBootcamp";
-
 void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
@@ -16,22 +14,20 @@ class _MyAppState extends State<MyApp> {
 
   void doChangeThemeMode(ThemeMode? setting) {
     setState(() {
-      _themeMode = (setting != null) ? setting : _themeMode;
+      _themeMode = setting ?? _themeMode;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
       themeMode: _themeMode,
       home: Material(
         child: Scaffold(
           appBar: AppBar(
-            title: const Text("Switch"),
+            title: const Text("Radio"),
           ),
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,

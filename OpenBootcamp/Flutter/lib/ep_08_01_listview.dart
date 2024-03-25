@@ -11,21 +11,21 @@ class App extends StatelessWidget {
       home: Material(
         child: Scaffold(
           appBar: AppBar(title: const Text("ListView")),
-          body: const HomePage(),
+          body: const Home(),
         )
       )
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<Home> createState() => _HomeState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return ListView(

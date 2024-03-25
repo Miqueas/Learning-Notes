@@ -1,32 +1,28 @@
 import "package:flutter/material.dart";
 
-const appTitle = "Flutter OpenBootcamp";
+void main() => runApp(const App());
 
-void main() => runApp(const MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
       home: Material(
-        child: MyHomePage(),
+        child: Home(),
       ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<Home> createState() => _HomeState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomeState extends State<Home> {
   TimeOfDay? _time;
 
   Future<void> doShowTimePicker() async {

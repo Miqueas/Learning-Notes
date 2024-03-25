@@ -1,38 +1,34 @@
 import "package:flutter/material.dart";
 import "package:sprintf/sprintf.dart";
 
-const appTitle = "Flutter OpenBootcamp";
+void main() => runApp(const App());
 
-void main() => runApp(const MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
       home: Material(
         child: Scaffold(
           appBar: AppBar(
             title: const Text("Slider"),
           ),
-          body: const MySliders()
+          body: const Sliders()
         )
       ),
     );
   }
 }
 
-class MySliders extends StatefulWidget {
-  const MySliders({super.key});
+class Sliders extends StatefulWidget {
+  const Sliders({super.key});
 
   @override
-  State<MySliders> createState() => _MySlidersState();
+  State<Sliders> createState() => _SlidersState();
 }
 
-class _MySlidersState extends State<MySliders> {
+class _SlidersState extends State<Sliders> {
   var _alpha = 255;
   var _red = 0;
   var _green = 0;

@@ -2,7 +2,7 @@ import "package:flutter/material.dart";
 
 void main() => runApp(const App());
 
-final class App extends StatelessWidget {
+class App extends StatelessWidget {
   const App({super.key});
 
   @override
@@ -11,21 +11,21 @@ final class App extends StatelessWidget {
       home: Material(
         child: Scaffold(
           appBar: AppBar(title: const Text("GridView")),
-          body: const HomePage(),
+          body: const Home(),
         ),
       ),
     );
   }
 }
 
-final class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<Home> createState() => _HomeState();
 }
 
-final class _HomePageState extends State<HomePage> {
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
