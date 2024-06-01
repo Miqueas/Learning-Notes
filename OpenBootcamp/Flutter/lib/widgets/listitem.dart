@@ -3,6 +3,7 @@ import "package:flutter/material.dart";
 final class ListItem extends StatelessWidget {
   final String title;
   final String subtitle;
+  final String page;
 
   static const _titleStyle = TextStyle(
     fontSize: 20,
@@ -13,6 +14,7 @@ final class ListItem extends StatelessWidget {
     super.key,
     required this.title,
     required this.subtitle,
+    required this.page,
   });
 
   @override
@@ -23,8 +25,7 @@ final class ListItem extends StatelessWidget {
       trailing: const Icon(Icons.arrow_forward),
       contentPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 6),
       onTap: () {
-        // TODO: Navigate to the module screen
-        print("Under development");
+        Navigator.of(context).pushNamed(page);
       },
     );
   }
