@@ -48,7 +48,7 @@ void main() {
   writeln("Counting...");
   for (auto iter = 0; iter < 10; ++iter) {
     writeln(iter);
-    
+
     if (iter == 9) writeln("Done.");
   }
 
