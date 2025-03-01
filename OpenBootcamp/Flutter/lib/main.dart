@@ -1,3 +1,4 @@
+import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
 
@@ -24,10 +25,11 @@ final class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
-    theme: _buildTheme(Brightness.light),
-    darkTheme: _buildTheme(Brightness.dark),
     title: "Flutter Notes",
+    theme: _buildTheme(Brightness.light),
     routes: buildRoutes(),
+    darkTheme: _buildTheme(Brightness.dark),
+    debugShowCheckedModeBanner: kDebugMode,
     home: Material(child: Scaffold(
       appBar: AppBar(title: const Text("Flutter Notes", style: _titleStyle)),
       body: Column(
