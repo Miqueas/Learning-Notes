@@ -8,7 +8,7 @@ import 'package:flutter_notes/fn_router_paths.dart';
 import 'package:flutter_notes/types/fn_exercise.dart';
 import 'package:flutter_notes/types/fn_module.dart';
 import 'package:flutter_notes/widgets/fn_list_item.dart';
-import 'package:sprintf/sprintf.dart';
+import 'package:format/format.dart';
 
 Widget _buildScreen(FnModule module, [ FnExercise? exercise ]) => Material(
   child: Scaffold(
@@ -22,13 +22,13 @@ Widget _buildScreen(FnModule module, [ FnExercise? exercise ]) => Material(
           ),
         ),
         Text(
-          sprintf(
-            switch (exercise != null) {
-              true => 'Exercise %02d - Module %02d',
-              false => 'Module %02d'
-            },
-            [ if (exercise != null) exercise.id, module.id, ],
-          ),
+          switch (exercise != null) {
+            true => 'Exercise {ex:02} - Module {mod:02}',
+            false => 'Module {mod:02}',
+          }.format({
+            if (exercise != null) #ex: exercise.id,
+            #mod: module.id,
+          }),
           style: const TextStyle(fontSize: 14,),
         ),
       ],),
@@ -36,7 +36,7 @@ Widget _buildScreen(FnModule module, [ FnExercise? exercise ]) => Material(
     body: exercise?.content ?? ListView(children: [
       for (final exercise in module.exercises) FnListItem(
         title: exercise.topic,
-        subtitle: sprintf('Exercise %02d', [ exercise.id ]),
+        subtitle: 'Exercise {ex:02}'.format({ #ex: exercise.id }),
         route: exercise.route,
       ),
     ],),

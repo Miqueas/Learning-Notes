@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import "package:sprintf/sprintf.dart";
+import "package:format/format.dart";
 
 void main() => runApp(const App());
 
@@ -59,7 +59,7 @@ class _SlidersState extends State<Sliders> {
                   max: 255,
                   onChanged: (value) => setState(() => _alpha = value.round())
                 ),
-                Text(sprintf("%03d", [_alpha]))
+                Text("{:03}".format([ _alpha ])),
               ]
             )
           )
@@ -76,7 +76,7 @@ class _SlidersState extends State<Sliders> {
                   max: 255,
                   onChanged: (value) => setState(() => _red = value.round())
                 ),
-                Text(sprintf("%03d", [_red]))
+                Text("{:03}".format([ _red ])),
               ]
             )
           )
@@ -93,7 +93,7 @@ class _SlidersState extends State<Sliders> {
                   max: 255,
                   onChanged: (value) => setState(() => _green = value.round())
                 ),
-                Text(sprintf("%03d", [_green]))
+                Text("{:03}".format([ _green ]),),
               ]
             )
           )
@@ -110,7 +110,7 @@ class _SlidersState extends State<Sliders> {
                   max: 255,
                   onChanged: (value) => setState(() => _blue = value.round())
                 ),
-                Text(sprintf("%03d", [_blue]))
+                Text("{:03}".format([ _blue ]),),
               ]
             )
           )

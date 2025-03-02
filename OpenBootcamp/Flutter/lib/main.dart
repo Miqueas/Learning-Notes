@@ -1,22 +1,20 @@
 import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
 import "package:flutter_notes/fn_router.dart";
+import "package:format/format.dart";
 import "package:google_fonts/google_fonts.dart";
 import "package:flutter_notes/widgets/fn_list_item.dart";
-import "package:sprintf/sprintf.dart";
 
 void main() => runApp(const FnApp());
 
-final class FnApp extends StatelessWidget {
-  static const _titleStyle = TextStyle(
-    fontSize: 24,
-    fontWeight: FontWeight.bold,
-  );
-  
-  static const _subtitleStyle = TextStyle(fontSize: 14,);
-
+final class FnApp extends StatefulWidget {
   const FnApp({ super.key });
 
+  @override
+  State<FnApp> createState() => _FnAppState();
+}
+
+final class _FnAppState extends State<FnApp> {
   ThemeData _buildTheme(Brightness mode) {
     final baseTheme = ThemeData.from(
       useMaterial3: true,
@@ -45,16 +43,19 @@ final class FnApp extends StatelessWidget {
         toolbarHeight: 96,
         centerTitle: true,
         title: const Column(mainAxisSize: MainAxisSize.min, children: [
-          Text("Flutter Notes", style: _titleStyle),
+          Text("Flutter Notes", style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),),
           Text("A small app I made while learning Flutter",
-            style: _subtitleStyle,
+            style: TextStyle(fontSize: 14,),
           ),
         ],),
       ),
       body: ListView(children: [
         for (final module in FnRouter.modules) FnListItem(
           title: module.topic,
-          subtitle: sprintf('Module %02d', [ module.id ]),
+          subtitle: 'Module {mod:02}'.format({ #mod: module.id}),
           route: module.route,
         ),
         // FnListItem(

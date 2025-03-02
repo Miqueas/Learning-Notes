@@ -14,7 +14,12 @@ class MyMaterialApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: const Text("Material App"),
-          actions: [ IconButton(onPressed: () {}, icon: const Icon(Icons.settings)) ],
+          actions: const [
+            IconButton(
+              icon: Icon(Icons.settings),
+              onPressed: null,
+            ),
+          ],
         ),
         body: const Center(child: Text("Material App"))
       ),
