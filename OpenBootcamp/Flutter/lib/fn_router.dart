@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_notes/exercises/module_04/fn_exercise_04_01_hello.dart';
+import 'package:flutter_notes/exercises/module_04/fn_exercise_04_02_stateful.dart';
 import 'package:flutter_notes/fn_router_paths.dart';
 import 'package:flutter_notes/types/fn_exercise.dart';
 import 'package:flutter_notes/types/fn_module.dart';
@@ -17,13 +18,13 @@ final class FnRouter {
           id: 1,
           topic: 'Hello, world!',
           route: FnRouterPaths.module04Exercise01,
-          content: FnExercise0401(),
+          content: FnExercise0401Hello(),
         ),
         FnExercise(
           id: 2,
           topic: 'Stateful widget',
           route: FnRouterPaths.module04Exercise02,
-          content: FnExercise0401(),
+          content: FnExercise0402Stateful(),
         ),
       }
     ),
