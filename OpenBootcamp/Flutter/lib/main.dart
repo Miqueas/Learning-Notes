@@ -7,14 +7,9 @@ import "package:flutter_notes/widgets/fn_list_item.dart";
 
 void main() => runApp(const FnApp());
 
-final class FnApp extends StatefulWidget {
+final class FnApp extends StatelessWidget {
   const FnApp({ super.key });
 
-  @override
-  State<FnApp> createState() => _FnAppState();
-}
-
-final class _FnAppState extends State<FnApp> {
   ThemeData _buildTheme(Brightness mode) {
     final baseTheme = ThemeData.from(
       useMaterial3: true,
