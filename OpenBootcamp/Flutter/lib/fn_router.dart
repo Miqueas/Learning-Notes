@@ -4,6 +4,10 @@ import 'package:flutter_notes/exercises/module_04/fn_exercise_04_02_stateful.dar
 import 'package:flutter_notes/exercises/module_04/fn_exercise_04_03_scaffold.dart';
 import 'package:flutter_notes/exercises/module_04/fn_exercise_04_04_drawer.dart';
 import 'package:flutter_notes/exercises/module_04/fn_exercise_04_05_cupertino.dart';
+import 'package:flutter_notes/exercises/module_04/fn_exercise_04_06_platform.dart';
+import 'package:flutter_notes/exercises/module_04/fn_exercise_04_07_buttons.dart';
+import 'package:flutter_notes/exercises/module_04/fn_exercise_04_09_icons.dart';
+import 'package:flutter_notes/exercises/module_04/fn_exercise_04_10_images.dart';
 import 'package:flutter_notes/fn_router_paths.dart';
 import 'package:flutter_notes/types/fn_exercise.dart';
 import 'package:flutter_notes/types/fn_module.dart';
@@ -79,6 +83,30 @@ final class FnRouter {
           topic: 'Cupertino',
           route: FnRouterPaths.module04Exercise05,
           content: FnExercise0405Cupertino(),
+        ),
+        FnExercise(
+          id: 6,
+          topic: 'Platform',
+          route: FnRouterPaths.module04Exercise06,
+          content: FnExercise0406Platform(),
+        ),
+        FnExercise(
+          id: 7,
+          topic: 'Buttons',
+          route: FnRouterPaths.module04Exercise07,
+          content: FnExercise0407Buttons(),
+        ),
+        FnExercise(
+          id: 9,
+          topic: 'Icons',
+          route: FnRouterPaths.module04Exercise09,
+          content: FnExercise0409Icons(),
+        ),
+        FnExercise(
+          id: 10,
+          topic: 'Images',
+          route: FnRouterPaths.module04Exercise10,
+          content: FnExercise0410Images(),
         ),
       },
     ),
