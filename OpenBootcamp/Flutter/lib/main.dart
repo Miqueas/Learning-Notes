@@ -1,24 +1,34 @@
 import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
+import "package:flutter_notes/fn_router.dart";
+import "package:flutter_notes/fn_router_paths.dart";
 import "package:google_fonts/google_fonts.dart";
+import "package:flutter_notes/widgets/fn_list_item.dart";
 
-import "package:flutter_notes/widgets/listitem.dart";
-import "package:flutter_notes/routes/routes.dart";
+void main() => runApp(const FnApp());
 
-void main() => runApp(const App());
-
-final class App extends StatelessWidget {
+final class FnApp extends StatelessWidget {
   static const _titleStyle = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.bold,
   );
+  
+  static const _subtitleStyle = TextStyle(fontSize: 14,);
 
-  const App({super.key});
+  const FnApp({ super.key });
 
   ThemeData _buildTheme(Brightness mode) {
-    final baseTheme = ThemeData(brightness: mode, colorSchemeSeed: Colors.amber);
+    final baseTheme = ThemeData.from(
+      useMaterial3: true,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: Colors.amber,
+        brightness: mode,
+        dynamicSchemeVariant: DynamicSchemeVariant.fidelity,
+      ),
+    );
 
     return baseTheme.copyWith(
+      brightness: mode,
       textTheme: GoogleFonts.latoTextTheme(baseTheme.textTheme)
     );
   }
@@ -27,29 +37,57 @@ final class App extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
     title: "Flutter Notes",
     theme: _buildTheme(Brightness.light),
-    routes: buildRoutes(),
+    routes: FnRouter().routes,
     darkTheme: _buildTheme(Brightness.dark),
     debugShowCheckedModeBanner: kDebugMode,
     home: Material(child: Scaffold(
-      appBar: AppBar(title: const Text("Flutter Notes", style: _titleStyle)),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Padding(
-            padding: EdgeInsets.all(20),
-            child: Text("Flutter Notes is a personal project I made while learning Flutter."),
+      appBar: AppBar(
+        toolbarHeight: 96,
+        centerTitle: true,
+        title: const Column(mainAxisSize: MainAxisSize.min, children: [
+          Text("Flutter Notes", style: _titleStyle),
+          Text("A small app I made while learning Flutter",
+            style: _subtitleStyle,
           ),
-          Expanded(child: ListView(children: const [
-            ListItem(title: "Getting started", subtitle: "Module 04", page: "/module04"),
-            ListItem(title: "Color and logic", subtitle: "Module 05", page: "/module05"),
-            ListItem(title: "Displaying information", subtitle: "Module 06", page: "/module06"),
-            ListItem(title: "User inputs", subtitle: "Module 07", page: "/module07"),
-            ListItem(title: "Dynamic content and Inkwell", subtitle: "Module 08", page: "/module08"),
-            ListItem(title: "Location and image picker", subtitle: "Module 09", page: "/module09"),
-            ListItem(title: "Networking", subtitle: "Module 10", page: "/module10"),
-          ],),),
-        ],
+        ],),
       ),
+      body: ListView(children: const [
+        FnListItem(
+          title: "Getting started",
+          subtitle: "Module 04",
+          route: FnRouterPaths.module04,
+        ),
+        FnListItem(
+          title: "Color and logic",
+          subtitle: "Module 05",
+          route: FnRouterPaths.module05,
+        ),
+        FnListItem(
+          title: "Displaying information",
+          subtitle: "Module 06",
+          route: FnRouterPaths.module06,
+        ),
+        FnListItem(
+          title: "User inputs",
+          subtitle: "Module 07",
+          route: FnRouterPaths.module07,
+        ),
+        FnListItem(
+          title: "Dynamic content and Inkwell",
+          subtitle: "Module 08",
+          route: FnRouterPaths.module08,
+        ),
+        FnListItem(
+          title: "Location and image picker",
+          subtitle: "Module 09",
+          route: FnRouterPaths.module09,
+        ),
+        FnListItem(
+          title: "Networking",
+          subtitle: "Module 10",
+          route: FnRouterPaths.module10,
+        ),
+      ],),
     ),),
   );
 }
