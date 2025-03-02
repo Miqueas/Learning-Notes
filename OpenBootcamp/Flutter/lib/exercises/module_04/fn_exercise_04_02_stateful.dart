@@ -16,6 +16,10 @@ final class _FnExercise0402StatefulState extends State<FnExercise0402Stateful> {
     child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       IconButton(
         icon: Icon(_icon),
+        color: switch (_liked) {
+          false => null,
+          true => Theme.of(context).colorScheme.primaryContainer,
+        },
         onPressed: () => setState(() {
           _liked = !_liked;
           _icon = switch (_liked) {
