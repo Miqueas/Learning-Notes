@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_notes/exercises/module_04/fn_exercise_04_01_hello.dart';
 import 'package:flutter_notes/exercises/module_04/fn_exercise_04_02_stateful.dart';
 import 'package:flutter_notes/exercises/module_04/fn_exercise_04_03_scaffold.dart';
+import 'package:flutter_notes/exercises/module_04/fn_exercise_04_04_drawer.dart';
 import 'package:flutter_notes/fn_router_paths.dart';
 import 'package:flutter_notes/types/fn_exercise.dart';
 import 'package:flutter_notes/types/fn_module.dart';
@@ -70,7 +71,7 @@ final class FnRouter {
           id: 4,
           topic: 'Drawer',
           route: FnRouterPaths.module04Exercise04,
-          content: FnExercise0402Stateful(),
+          content: FnExercise0404Drawer(),
         ),
         FnExercise(
           id: 5,
