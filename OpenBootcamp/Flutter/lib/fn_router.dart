@@ -3,6 +3,7 @@ import 'package:flutter_notes/exercises/module_04/fn_exercise_04_01_hello.dart';
 import 'package:flutter_notes/exercises/module_04/fn_exercise_04_02_stateful.dart';
 import 'package:flutter_notes/exercises/module_04/fn_exercise_04_03_scaffold.dart';
 import 'package:flutter_notes/exercises/module_04/fn_exercise_04_04_drawer.dart';
+import 'package:flutter_notes/exercises/module_04/fn_exercise_04_05_cupertino.dart';
 import 'package:flutter_notes/fn_router_paths.dart';
 import 'package:flutter_notes/types/fn_exercise.dart';
 import 'package:flutter_notes/types/fn_module.dart';
@@ -45,7 +46,7 @@ Widget _buildScreen(FnModule module, [ FnExercise? exercise ]) => Material(
 final class FnRouter {
   static const modules = {
     FnModule(
-      id: 1,
+      id: 4,
       topic: 'Getting started',
       route: FnRouterPaths.module04,
       exercises: {
@@ -77,7 +78,7 @@ final class FnRouter {
           id: 5,
           topic: 'Cupertino',
           route: FnRouterPaths.module04Exercise05,
-          content: FnExercise0402Stateful(),
+          content: FnExercise0405Cupertino(),
         ),
       },
     ),
