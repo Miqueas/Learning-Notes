@@ -46,7 +46,7 @@ final class FnMaterialApp extends StatefulWidget {
 
 final class _FnMaterialAppState extends State<FnMaterialApp> {
   var _liked = true;
-  var _icon = Icons.favorite_border_rounded;
+  var _icon = Icons.favorite_rounded;
 
   @override
   Widget build(BuildContext context) => MaterialApp(
@@ -85,7 +85,7 @@ final class FnCupertinoApp extends StatefulWidget {
 
 final class _FnCupertinoAppState extends State<FnCupertinoApp> {
   var _liked = true;
-  var _icon = CupertinoIcons.heart;
+  var _icon = CupertinoIcons.heart_fill;
 
   @override
   Widget build(BuildContext context) => CupertinoApp(

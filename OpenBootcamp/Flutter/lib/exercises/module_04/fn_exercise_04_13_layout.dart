@@ -1,18 +1,19 @@
-import "package:flutter/cupertino.dart";
-import "package:flutter/material.dart";
-import "package:flutter/scheduler.dart";
-import "package:gap/gap.dart";
+import 'package:flutter/scheduler.dart';
+import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
-final class FnExercise0405Cupertino extends StatefulWidget {
-  const FnExercise0405Cupertino({ super.key });
+part 'fn_exercise_04_13_layout.expanded.dart';
+part 'fn_exercise_04_13_layout.padding.dart';
+part 'fn_exercise_04_13_layout.divider.dart';
+
+final class FnExercise0413Layout extends StatefulWidget {
+  const FnExercise0413Layout({ super.key });
 
   @override
-  State<FnExercise0405Cupertino> createState() => _FnExercise0405CupertinoState();
+  State<FnExercise0413Layout> createState() => _FnExercise0413LayoutState();
 }
 
-final class _FnExercise0405CupertinoState
-extends State<FnExercise0405Cupertino>
-{
+final class _FnExercise0413LayoutState extends State<FnExercise0413Layout> {
   final _controller = PageController();
 
   @override
@@ -41,9 +42,9 @@ extends State<FnExercise0405Cupertino>
       ),),
       const Gap(8),
       Expanded(child: PageView(controller: _controller, children: const [
-        CupertinoAppWithPageScaffold(),
-        CupertinoAppWithTabScaffold(),
-        CupertinoAppWithNavigationBar(),
+        FnExpandedLayout(),
+        FnPaddingLayout(),
+        FnDividerLayout(),
       ],),),
       const Gap(8),
       Center(child: IconButton.filledTonal(
@@ -100,15 +101,15 @@ extends State<FnExercise0405Cupertino>
       child: switch (_controller.positions.isNotEmpty) {
         false => null,
         true => switch (_controller.page) {
-          0 => const Center(child: Text('Page Scaffold',
+          0 => const Center(child: Text('Expanded',
             style: TextStyle(fontWeight: FontWeight.bold,),
             textAlign: TextAlign.center,
           ),),
-          1 => const Center(child: Text('Tab Scaffold',
+          1 => const Center(child: Text('Padding',
             style: TextStyle(fontWeight: FontWeight.bold,),
             textAlign: TextAlign.center,
           ),),
-          2 => const Center(child: Text('Navigation Bar',
+          2 => const Center(child: Text('Divider',
             style: TextStyle(fontWeight: FontWeight.bold,),
             textAlign: TextAlign.center,
           ),),
@@ -118,72 +119,4 @@ extends State<FnExercise0405Cupertino>
     ),
     const Gap(8),
   ],);
-}
-
-final class CupertinoAppWithPageScaffold extends StatelessWidget {
-  const CupertinoAppWithPageScaffold({super.key});
-
-  @override
-  Widget build(BuildContext context) => const CupertinoApp(
-    debugShowCheckedModeBanner: false,
-    home: CupertinoPageScaffold(
-      child: Center(child: Text("Hello, world!"),),
-    ),
-  );
-}
-
-final class CupertinoAppWithTabScaffold extends StatelessWidget {
-  const CupertinoAppWithTabScaffold({super.key});
-
-  @override
-  Widget build(BuildContext context) => CupertinoApp(
-    debugShowCheckedModeBanner: false,
-    home: CupertinoTabScaffold(
-      tabBar: CupertinoTabBar(items: const [
-        BottomNavigationBarItem(
-          icon: Icon(CupertinoIcons.home),
-          label: "Home",
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(CupertinoIcons.compass),
-          label: "Explore",
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(CupertinoIcons.person),
-          label: "Account",
-        ),
-      ],),
-      tabBuilder: (context, index) => switch (index) {
-        0 => const CupertinoPageScaffold(
-          child: Center(child: Text("Home"),),
-        ),
-        1 => const CupertinoPageScaffold(
-          child: Center(child: Text("Explore"),),
-        ),
-        2 => const CupertinoPageScaffold(
-          child: Center(child: Text("Account"),),
-        ),
-        _ => const CupertinoPageScaffold(
-          child: Center(child: Text("Main view"),),
-        ),
-      },
-    ),
-  );
-}
-
-final class CupertinoAppWithNavigationBar extends StatelessWidget {
-  const CupertinoAppWithNavigationBar({super.key});
-
-  @override
-  Widget build(BuildContext context) => const CupertinoApp(
-    debugShowCheckedModeBanner: false,
-    home: CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        leading: Icon(CupertinoIcons.back),
-        middle: Center(child: Text("Title")),
-        trailing: Icon(CupertinoIcons.settings),
-      ),
-      child: Center(child: Text("Content"),),
-    ),
-  );
 }
