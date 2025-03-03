@@ -1,5 +1,5 @@
 final class FnRouterPaths {
-  static const home = '/';
+  static const about = '/about';
 
   // Module 04
   static const module04 = '/module04';

@@ -8,6 +8,12 @@ import 'package:flutter_notes/exercises/module_04/fn_exercise_04_06_platform.dar
 import 'package:flutter_notes/exercises/module_04/fn_exercise_04_07_buttons.dart';
 import 'package:flutter_notes/exercises/module_04/fn_exercise_04_09_icons.dart';
 import 'package:flutter_notes/exercises/module_04/fn_exercise_04_10_images.dart';
+import 'package:flutter_notes/exercises/module_04/fn_exercise_04_11_fonts.dart';
+import 'package:flutter_notes/exercises/module_04/fn_exercise_04_12_alignment.dart';
+import 'package:flutter_notes/exercises/module_04/fn_exercise_04_13_layout.dart';
+import 'package:flutter_notes/exercises/module_04/fn_exercise_04_14_container.dart';
+import 'package:flutter_notes/exercises/module_04/fn_exercise_04_15_stepper.dart';
+import 'package:flutter_notes/fn_about_screen.dart';
 import 'package:flutter_notes/fn_router_paths.dart';
 import 'package:flutter_notes/types/fn_exercise.dart';
 import 'package:flutter_notes/types/fn_module.dart';
@@ -108,12 +114,43 @@ final class FnRouter {
           route: FnRouterPaths.module04Exercise10,
           content: FnExercise0410Images(),
         ),
+        FnExercise(
+          id: 11,
+          topic: 'Fonts',
+          route: FnRouterPaths.module04Exercise11,
+          content: FnExercise0411Fonts(),
+        ),
+        FnExercise(
+          id: 12,
+          topic: 'Alignment',
+          route: FnRouterPaths.module04Exercise12,
+          content: FnExercise0412Alignment(),
+        ),
+        FnExercise(
+          id: 13,
+          topic: 'Layout',
+          route: FnRouterPaths.module04Exercise13,
+          content: FnExercise0413Layout(),
+        ),
+        FnExercise(
+          id: 14,
+          topic: 'Container',
+          route: FnRouterPaths.module04Exercise14,
+          content: FnExercise0414Container(),
+        ),
+        FnExercise(
+          id: 15,
+          topic: 'Stepper',
+          route: FnRouterPaths.module04Exercise15,
+          content: FnExercise0415Stepper(),
+        ),
       },
     ),
   };
 
   static Map<String, WidgetBuilder> buildRoutes() {
     final routes = <String, WidgetBuilder>{};
+    routes[FnRouterPaths.about] = (context) => const FnAboutScreen();
 
     for (final module in modules) {
       routes[module.route] = (context) => _buildScreen(module);
