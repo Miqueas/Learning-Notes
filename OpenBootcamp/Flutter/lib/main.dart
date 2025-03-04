@@ -81,16 +81,6 @@ final class _FnAppState extends State<FnApp> {
           route: module.route,
         ),
         // FnListItem(
-        //   title: "Getting started",
-        //   subtitle: "Module 04",
-        //   route: FnRouterPaths.module04,
-        // ),
-        // FnListItem(
-        //   title: "Color and logic",
-        //   subtitle: "Module 05",
-        //   route: FnRouterPaths.module05,
-        // ),
-        // FnListItem(
         //   title: "Displaying information",
         //   subtitle: "Module 06",
         //   route: FnRouterPaths.module06,

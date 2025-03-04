@@ -13,6 +13,9 @@ import 'package:flutter_notes/exercises/module_04/fn_exercise_04_12_alignment.da
 import 'package:flutter_notes/exercises/module_04/fn_exercise_04_13_layout.dart';
 import 'package:flutter_notes/exercises/module_04/fn_exercise_04_14_container.dart';
 import 'package:flutter_notes/exercises/module_04/fn_exercise_04_15_stepper.dart';
+import 'package:flutter_notes/exercises/module_05/fn_exercise_05_01_color.dart';
+import 'package:flutter_notes/exercises/module_05/fn_exercise_05_02_provider.dart';
+import 'package:flutter_notes/exercises/module_05/fn_exercise_05_03_streamcontroller.dart';
 import 'package:flutter_notes/fn_about_screen.dart';
 import 'package:flutter_notes/fn_router_paths.dart';
 import 'package:flutter_notes/types/fn_exercise.dart';
@@ -143,6 +146,31 @@ final class FnRouter {
           topic: 'Stepper',
           route: FnRouterPaths.module04Exercise15,
           content: FnExercise0415Stepper(),
+        ),
+      },
+    ),
+    FnModule(
+      id: 5,
+      topic: 'Color and logic',
+      route: FnRouterPaths.module05,
+      exercises: {
+        FnExercise(
+          id: 1,
+          topic: 'Color',
+          route: FnRouterPaths.module05Exercise01,
+          content: FnExercise0501Color(),
+        ),
+        FnExercise(
+          id: 2,
+          topic: 'Provider',
+          route: FnRouterPaths.module05Exercise02,
+          content: FnExercise0502Provider(),
+        ),
+        FnExercise(
+          id: 3,
+          topic: 'StreamController',
+          route: FnRouterPaths.module05Exercise03,
+          content: FnExercise0503StreamController(),
         ),
       },
     ),
