@@ -1,4 +1,4 @@
-final class FnRouterPaths {
+final class FnPaths {
   static const about = '/about';
 
   // Module 04
