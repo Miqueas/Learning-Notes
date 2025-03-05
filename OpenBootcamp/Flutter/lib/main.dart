@@ -1,7 +1,7 @@
 import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
-import "package:flutter_notes/fn_router.dart";
-import "package:flutter_notes/fn_router_paths.dart";
+import "package:flutter_notes/router/fn_router.dart";
+import "package:flutter_notes/fn_paths.dart";
 import "package:format/format.dart";
 import "package:gap/gap.dart";
 import "package:google_fonts/google_fonts.dart";
@@ -67,9 +67,7 @@ final class _FnAppState extends State<FnApp> {
           const Gap(8),
           Builder(builder: (context) => IconButton(
             icon: const Icon(Icons.info_rounded),
-            onPressed: () => Navigator.of(context).pushNamed(
-              FnRouterPaths.about
-            ),
+            onPressed: () => Navigator.of(context).pushNamed(FnPaths.about),
           ),),
           const Gap(12),
         ],
@@ -77,34 +75,9 @@ final class _FnAppState extends State<FnApp> {
       body: ListView(children: [
         for (final module in FnRouter.modules) FnListItem(
           title: module.topic,
-          subtitle: 'Module {mod:02}'.format({ #mod: module.id}),
           route: module.route,
+          subtitle: 'Module {mod:02}'.format({ #mod: module.id}),
         ),
-        // FnListItem(
-        //   title: "Displaying information",
-        //   subtitle: "Module 06",
-        //   route: FnRouterPaths.module06,
-        // ),
-        // FnListItem(
-        //   title: "User inputs",
-        //   subtitle: "Module 07",
-        //   route: FnRouterPaths.module07,
-        // ),
-        // FnListItem(
-        //   title: "Dynamic content and Inkwell",
-        //   subtitle: "Module 08",
-        //   route: FnRouterPaths.module08,
-        // ),
-        // FnListItem(
-        //   title: "Location and image picker",
-        //   subtitle: "Module 09",
-        //   route: FnRouterPaths.module09,
-        // ),
-        // FnListItem(
-        //   title: "Networking",
-        //   subtitle: "Module 10",
-        //   route: FnRouterPaths.module10,
-        // ),
       ],),
     ),),
   );
