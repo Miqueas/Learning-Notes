@@ -16,7 +16,7 @@ final class FnAboutScreen extends StatelessWidget {
         fontSize: 32,
         fontWeight: FontWeight.w900,
       ),),
-      const Text('A simple app made while I was learning Flutter',),
+      const Text('A simple app for learning Flutter',),
       const SizedBox(
         width: 200,
         child: Divider(thickness: 1, height: 24,),
