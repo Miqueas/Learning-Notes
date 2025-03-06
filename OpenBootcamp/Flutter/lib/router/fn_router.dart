@@ -21,6 +21,10 @@ import 'package:flutter_notes/exercises/module_06/fn_exercise_06_02_alertdialog.
 import 'package:flutter_notes/exercises/module_06/fn_exercise_06_03_simpledialog.dart';
 import 'package:flutter_notes/exercises/module_06/fn_exercise_06_04_networkimage.dart';
 import 'package:flutter_notes/exercises/module_06/fn_exercise_06_05_navigation.dart';
+import 'package:flutter_notes/exercises/module_07/fn_exercise_07_01_textfield.dart';
+import 'package:flutter_notes/exercises/module_07/fn_exercise_07_03_texteditingcontroller.dart';
+import 'package:flutter_notes/exercises/module_07/fn_exercise_07_04_datepicker.dart';
+import 'package:flutter_notes/exercises/module_07/fn_exercise_07_05_timepicker.dart';
 import 'package:flutter_notes/fn_about_screen.dart';
 import 'package:flutter_notes/fn_paths.dart';
 import 'package:flutter_notes/types/fn_exercise.dart';
