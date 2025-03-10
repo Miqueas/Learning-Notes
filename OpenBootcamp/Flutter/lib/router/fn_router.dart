@@ -25,6 +25,10 @@ import 'package:flutter_notes/exercises/module_07/fn_exercise_07_01_textfield.da
 import 'package:flutter_notes/exercises/module_07/fn_exercise_07_03_texteditingcontroller.dart';
 import 'package:flutter_notes/exercises/module_07/fn_exercise_07_04_datepicker.dart';
 import 'package:flutter_notes/exercises/module_07/fn_exercise_07_05_timepicker.dart';
+import 'package:flutter_notes/exercises/module_07/fn_exercise_07_07_switch.dart';
+import 'package:flutter_notes/exercises/module_07/fn_exercise_07_08_radio.dart';
+import 'package:flutter_notes/exercises/module_07/fn_exercise_07_09_checkbox.dart';
+import 'package:flutter_notes/exercises/module_07/fn_exercise_07_10_slider.dart';
 import 'package:flutter_notes/fn_about_screen.dart';
 import 'package:flutter_notes/fn_paths.dart';
 import 'package:flutter_notes/types/fn_exercise.dart';

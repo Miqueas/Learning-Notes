@@ -29,5 +29,29 @@ const _module07 = FnModule(
       route: FnPaths.module07Exercise05,
       content: FnExercise0705TimePicker(),
     ),
+    FnExercise(
+      id: 7,
+      topic: 'Switch',
+      route: FnPaths.module07Exercise07,
+      content: FnExercise0707Switch(),
+    ),
+    FnExercise(
+      id: 8,
+      topic: 'Radio',
+      route: FnPaths.module07Exercise08,
+      content: FnExercise0708Radio(),
+    ),
+    FnExercise(
+      id: 9,
+      topic: 'Checkbox',
+      route: FnPaths.module07Exercise09,
+      content: FnExercise0709Checkbox(),
+    ),
+    FnExercise(
+      id: 10,
+      topic: 'Slider',
+      route: FnPaths.module07Exercise10,
+      content: FnExercise0710Slider(),
+    ),
   }
 );
