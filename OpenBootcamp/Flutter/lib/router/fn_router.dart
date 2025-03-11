@@ -31,6 +31,8 @@ import 'package:flutter_notes/exercises/module_07/fn_exercise_07_09_checkbox.dar
 import 'package:flutter_notes/exercises/module_07/fn_exercise_07_10_slider.dart';
 import 'package:flutter_notes/exercises/module_08/fn_exercise_08_01_listview.dart';
 import 'package:flutter_notes/exercises/module_08/fn_exercise_08_02_dissmisible_card.dart';
+import 'package:flutter_notes/exercises/module_08/fn_exercise_08_03_inkwell.dart';
+import 'package:flutter_notes/exercises/module_08/fn_exercise_08_04_gridview.dart';
 import 'package:flutter_notes/fn_about_screen.dart';
 import 'package:flutter_notes/fn_paths.dart';
 import 'package:flutter_notes/types/fn_exercise.dart';
