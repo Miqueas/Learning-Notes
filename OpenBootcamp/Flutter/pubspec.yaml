@@ -14,7 +14,7 @@ dependencies:
   google_fonts: ^6.1.0
   font_awesome_flutter: ^10.6.0
   image_picker: ^1.0.7
-  # image_picker_for_web: ^3.0.2
+  image_picker_for_web: ^3.0.2
   location: ^6.0.2
   http: ^1.2.1
   provider: ^6.1.1
