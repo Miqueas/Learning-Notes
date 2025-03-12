@@ -33,6 +33,9 @@ import 'package:flutter_notes/exercises/module_08/fn_exercise_08_01_listview.dar
 import 'package:flutter_notes/exercises/module_08/fn_exercise_08_02_dissmisible_card.dart';
 import 'package:flutter_notes/exercises/module_08/fn_exercise_08_03_inkwell.dart';
 import 'package:flutter_notes/exercises/module_08/fn_exercise_08_04_gridview.dart';
+import 'package:flutter_notes/exercises/module_09/fn_exercise_09_01_imagepicker.dart';
+import 'package:flutter_notes/exercises/module_09/fn_exercise_09_02_location.dart';
+import 'package:flutter_notes/exercises/module_10/fn_exercise_10_01_http_get.dart';
 import 'package:flutter_notes/fn_about_screen.dart';
 import 'package:flutter_notes/fn_paths.dart';
 import 'package:flutter_notes/types/fn_exercise.dart';
